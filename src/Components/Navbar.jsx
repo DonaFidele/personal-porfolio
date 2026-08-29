@@ -1,54 +1,147 @@
-import React from "react";
-import { Download, Github, Linkedin } from "lucide-react";
+import React, { useState } from "react";
+import { Github, Linkedin, ChevronDown, FileText, Menu, X } from "lucide-react";
+
+const navLinks = [
+  { label: "about", href: "#about" },
+  { label: "skills", href: "#skills" },
+  { label: "projects", href: "#projects" },
+  { label: "contact", href: "#contact" },
+];
+
+const resumes = [
+  { label: "Systems Engineer", href: "resume/SE_Role_Resume.pdf" },
+  { label: "AI / Deep Learning", href: "resume/AI_Role_Resume.pdf" },
+  { label: "Web Developer", href: "resume/WD_Role_Resume.pdf" },
+];
 
 const Navbar = ({ scrollY }) => {
+  const [open, setOpen] = useState(false);
+  const [resumeOpen, setResumeOpen] = useState(false);
+
   return (
     <nav
-      className={`fixed top-4 left-0 right-0 mx-auto max-w-7xl px-6 z-40 transition-all duration-400 ${
-        scrollY > 80 ? "bg-white/80 backdrop-blur-md shadow rounded-sm" : ""
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrollY > 40
+          ? "bg-bg/90 backdrop-blur-md border-b border-border"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="flex items-center justify-between py-4">
-        {/* Left Side — Branding */}
-        <div className="flex items-center gap-4">
-          <div className="relative group">
-            <div className="absolute -inset-1 rounded-lg blur opacity-25 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:opacity-40 transition" />
-            <div className="relative px-4 py-2 bg-white rounded-lg">
-              <h1 className="text-xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                ANSHAM MAURYA
-              </h1>
-              <p className="text-xs text-gray-600 mt-1 font-semibold">
-                Software Engineer | Deep Learning Engineer | Web Developer
-              </p>
-            </div>
-          </div>
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+        {/* Branding */}
+        <a href="#top" className="font-mono text-sm sm:text-base text-text flex items-center gap-1 shrink-0">
+          <span className="text-accent">ansham</span>
+          <span className="text-muted">@</span>
+          <span className="text-accent2">systems</span>
+          <span className="text-muted">:~$</span>
+          <span className="w-2 h-4 bg-accent ml-1 animate-blink" />
+        </a>
+
+        {/* Desktop links */}
+        <div className="hidden md:flex items-center gap-8 font-mono text-sm">
+          {navLinks.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="text-muted hover:text-text transition-colors"
+            >
+              <span className="text-accent">./</span>
+              {l.label}
+            </a>
+          ))}
         </div>
 
-        {/* Right Side — Buttons */}
-        <div className="flex items-center gap-4">
+        {/* Right side */}
+        <div className="hidden md:flex items-center gap-4">
+          <div className="relative">
+            <button
+              onClick={() => setResumeOpen((v) => !v)}
+              onBlur={() => setTimeout(() => setResumeOpen(false), 150)}
+              className="flex items-center gap-2 px-4 py-2 rounded-md border border-border text-sm font-mono text-text hover:border-accent hover:text-accent transition-colors"
+            >
+              <FileText className="w-4 h-4" />
+              resume
+              <ChevronDown className="w-3.5 h-3.5" />
+            </button>
 
-          {/* Socials */}
-          <div className="flex gap-3">
+            {resumeOpen && (
+              <div className="absolute right-0 mt-2 w-56 bg-surface border border-border rounded-md shadow-xl overflow-hidden">
+                {resumes.map((r) => (
+                  <a
+                    key={r.href}
+                    href={r.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-3 text-sm font-mono text-text hover:bg-surfaceHover hover:text-accent transition-colors"
+                  >
+                    {r.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div className="flex gap-2">
             {[
-              { Icon: Github, link: "https://github.com/ANSHAM1" },
-              {
-                Icon: Linkedin,
-                link: "https://www.linkedin.com/in/ansham-maurya-69ab80297/",
-              },
-            ].map(({ Icon, link }, idx) => (
+              { Icon: Github, link: "https://github.com/ANSHAM1", label: "GitHub" },
+              { Icon: Linkedin, link: "https://www.linkedin.com/in/ansham-maurya-69ab80297/", label: "LinkedIn" },
+            ].map(({ Icon, link, label }) => (
               <a
-                key={idx}
+                key={label}
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white border flex items-center justify-center shadow hover:scale-105 transition"
+                aria-label={label}
+                className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors"
               >
                 <Icon className="w-4 h-4" />
               </a>
             ))}
           </div>
         </div>
+
+        {/* Mobile toggle */}
+        <button
+          className="md:hidden text-text"
+          onClick={() => setOpen((v) => !v)}
+          aria-label="Toggle menu"
+        >
+          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
       </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="md:hidden bg-bg border-t border-border px-6 py-6 flex flex-col gap-4 font-mono text-sm">
+          {navLinks.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="text-muted hover:text-text transition-colors"
+            >
+              <span className="text-accent">./</span>
+              {l.label}
+            </a>
+          ))}
+          <div className="flex flex-col gap-2 pt-2 border-t border-border">
+            {resumes.map((r) => (
+              <a
+                key={r.href}
+                href={r.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted hover:text-accent transition-colors"
+              >
+                resume — {r.label}
+              </a>
+            ))}
+          </div>
+          <div className="flex gap-3 pt-2">
+            <a href="https://github.com/ANSHAM1" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-accent">GitHub</a>
+            <a href="https://www.linkedin.com/in/ansham-maurya-69ab80297/" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-accent">LinkedIn</a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

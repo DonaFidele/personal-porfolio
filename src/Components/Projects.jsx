@@ -1,74 +1,105 @@
 import React from "react";
-import { Github, Download } from "lucide-react";
+import { Github, Lock, ArrowUpRight } from "lucide-react";
+import Reveal from "./Reveal";
 
 const projects = [
   {
-    title: "TorchLessCUDA — Deep Learning Engine",
+    title: "TorchLessCUDA",
     description:
-      "A full deep learning engine built from scratch in C++ and CUDA, including tensor operations, GPU kernels, convolution layers, and optimized memory handling.",
-    tech: ["C++", "CUDA", "GPU Kernels"],
-    gradient: "from-blue-600 to-cyan-600",
+      "A deep learning framework built entirely from scratch in modern C++20 and CUDA — custom tensor ops, hand-written GPU kernels, and CNN training/inference with no ML frameworks underneath.",
+    tags: ["C++", "CUDA", "Deep Learning", "GPU Programming"],
     github: "https://github.com/ANSHAM1/TOrchLessCUDA",
-    download : "https://github.com/ANSHAM1/TOrchLessCUDA/releases/tag/v1.0"
+    status: "Public",
   },
   {
-    title: "Modelise — Universal AI Model Hosting Platform",
+    title: "Insertion.AI",
     description:
-      "A platform to host and deploy any AI/ML model through a single unified API. Supports GPT, Claude, Gemini, and custom model execution for developers.",
-    tech: ["Node.js", "Next.js", "Docker", "AI Providers"],
-    gradient: "from-green-600 to-teal-500",
-    github: "https://github.com/ANSHAM1/Modelise",
-    download: "--",
+      "A multi-agent engineering assistant that turns project ideas into structured development plans, initializes repos, tracks real progress through Git, and adapts execution using LLM orchestration.",
+    tags: ["Python", "LangGraph", "FastAPI", "Redis", "Temporal"],
+    github: "https://github.com/ANSHAM1/Insertion.AI",
+    status: "Public",
   },
   {
-    title: "SentinelAI NIDS — Network Intrusion Detection",
+    title: "SentinelAI_Nids",
     description:
-      "A Real Time network intrusion detection system. Uses ML models (XGBoost + LSTM) with rust async packet processing for real-time anomaly detection.",
-    tech: ["Rust", "Async", "Networking", "ML", "DL"],
-    gradient: "from-purple-600 to-indigo-600",
+      "An AI-driven network intrusion detection system — LSTM-based anomaly detection running on top of real-time, async packet processing in Rust.",
+    tags: ["Rust", "Async", "Deep Learning", "Cybersecurity"],
     github: "https://github.com/ANSHAM1/SentinelAI_Nids",
-    download: "https://github.com/ANSHAM1/SentinelAI_Nids/releases/tag/v1.0.0",
+    status: "Public",
+  },
+  {
+    title: "ContextFlow.AI",
+    description:
+      "An AI research assistant powered by LLMs, RAG, and LangGraph for document understanding, multi-step reasoning, and context-aware answers.",
+    tags: ["Python", "RAG", "LangChain", "Vector DB"],
+    github: "https://github.com/ANSHAM1/ContextFlow.AI",
+    status: "Public",
+  },
+  {
+    title: "ExperimentOS",
+    description:
+      "A distributed platform for defining, executing, monitoring, and analyzing long-running ML experiments, built on an async, event-driven backend.",
+    tags: ["Python", "FastAPI", "PostgreSQL", "Distributed Systems"],
+    github: null,
+    status: "Private",
+  },
+  {
+    title: "Embedded_LSM_KV_Database",
+    description:
+      "A lightweight embedded key-value database built from scratch in modern C++, implementing an LSM-tree storage engine with write-ahead logging and SSTable persistence.",
+    tags: ["C++", "Databases", "Systems Programming"],
+    github: "https://github.com/ANSHAM1/Embedded_LSM_KV_Database",
+    status: "Public",
   },
 ];
 
 const Projects = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-6">
-        
-        {/* Header */}
-        <div className="mb-10">
-          <h2 className="text-4xl font-extrabold">Top Projects</h2>
-          <p className="text-gray-300 mt-2 max-w-2xl">
-            Low-level DL engines, AI infrastructure, and high-performance systems.
-          </p>
-        </div>
+    <section id="projects" className="py-24 bg-surface/40 border-y border-border">
+      <div className="max-w-6xl mx-auto px-6">
+        <Reveal>
+          <div className="mb-14">
+            <p className="font-mono text-xs text-accent mb-2">./projects</p>
+            <h2 className="font-mono text-3xl sm:text-4xl font-bold text-text">
+              Selected work
+            </h2>
+            <p className="text-muted mt-3 max-w-xl">
+              Systems and models built from first principles — most of these
+              exist because I wanted to understand what a framework was
+              hiding from me.
+            </p>
+          </div>
+        </Reveal>
 
-        {/* Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p, i) => (
-            <div
-              key={i}
-              className="relative group rounded-2xl overflow-hidden shadow-xl"
-            >
-              {/* Gradient Overlay */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${p.gradient} opacity-30 group-hover:opacity-60 transition`}
-              />
-
-              {/* Card Content */}
-              <div className="relative bg-gradient-to-br from-black/20 to-transparent p-6 rounded-2xl h-full flex flex-col justify-between">
-                
+            <Reveal key={p.title} delay={i * 70}>
+              <div className="h-full flex flex-col justify-between border border-border rounded-xl p-6 bg-bg hover:border-accent/50 hover:-translate-y-1 transition-all duration-300">
                 <div>
-                  <h3 className="text-2xl font-extrabold mb-2">{p.title}</h3>
-                  <p className="text-sm text-gray-200 mb-4">{p.description}</p>
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <h3 className="font-mono text-lg font-bold text-text leading-snug">
+                      {p.title}
+                    </h3>
+                    <span
+                      className={`shrink-0 font-mono text-[10px] px-2 py-1 rounded border ${
+                        p.status === "Private"
+                          ? "border-border text-muted"
+                          : "border-accent2/40 text-accent2"
+                      }`}
+                    >
+                      {p.status}
+                    </span>
+                  </div>
 
-                  {/* Tech Tags */}
+                  <p className="text-sm text-muted leading-relaxed mb-5">
+                    {p.description}
+                  </p>
+
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {p.tech.map((t, idx) => (
+                    {p.tags.map((t) => (
                       <span
-                        key={idx}
-                        className="text-xs px-2 py-1 bg-white/10 rounded-full"
+                        key={t}
+                        className="font-mono text-[11px] px-2.5 py-1 rounded-md bg-surface border border-border text-text/80"
                       >
                         {t}
                       </span>
@@ -76,36 +107,41 @@ const Projects = () => {
                   </div>
                 </div>
 
-                {/* Buttons */}
-                <div className="flex items-center justify-between mt-auto">
+                {p.github ? (
                   <a
                     href={p.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-3 py-2 rounded-full bg-white text-gray-900 font-semibold hover:scale-105 transition"
+                    className="inline-flex items-center gap-2 font-mono text-sm text-text hover:text-accent transition-colors w-fit"
                   >
                     <Github className="w-4 h-4" />
-                    GitHub
+                    View source
+                    <ArrowUpRight className="w-3.5 h-3.5" />
                   </a>
-
-                  {p.download && (
-                    <a
-                      href={p.download}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-3 py-2 rounded-full border border-white/20 text-white hover:bg-white/10 transition"
-                    >
-                      <Download className="w-4 h-4" />
-                      Download
-                    </a>
-                  )}
-                </div>
-
+                ) : (
+                  <span className="inline-flex items-center gap-2 font-mono text-sm text-muted w-fit">
+                    <Lock className="w-4 h-4" />
+                    Private repository
+                  </span>
+                )}
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
+        <Reveal delay={150}>
+          <div className="mt-10 text-center">
+            <a
+              href="https://github.com/ANSHAM1?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-mono text-sm text-muted hover:text-accent transition-colors"
+            >
+              See all repositories on GitHub
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

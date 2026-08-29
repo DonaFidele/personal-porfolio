@@ -1,121 +1,98 @@
 import React from "react";
-import { Target } from "lucide-react";
+import Reveal from "./Reveal";
 
-const skills = [
+const skillGroups = [
   {
-    name: "C++ (Advanced)",
-    desc: "Templates, metaprogramming, CUDA, ML systems",
-    icon: "⚙️",
-    color: "from-blue-600 to-cyan-500",
-    bg: "bg-blue-50",
+    category: "Languages",
+    items: ["Python", "C++", "Rust", "Java", "JavaScript"],
   },
   {
-    name: "Rust (Async & Systems)",
-    desc: "Networking, async runtime, NIDS (Sentinel AI)",
-    icon: "🦀",
-    color: "from-orange-500 to-red-500",
-    bg: "bg-orange-50",
+    category: "AI / Machine Learning",
+    items: [
+      "PyTorch",
+      "Keras",
+      "NumPy",
+      "Pandas",
+      "CUDA",
+      "ANN",
+      "RNN",
+      "LSTM",
+      "CNN",
+      "Transformers",
+    ],
   },
   {
-    name: "MERN Stack",
-    desc: "React, Next.js, Node, Express, MongoDB",
-    icon: "⚛️",
-    color: "from-blue-500 to-indigo-500",
-    bg: "bg-indigo-50",
+    category: "LLM / Agentic AI",
+    items: [
+      "LangChain",
+      "LangGraph",
+      "RAG",
+      "AI Agents",
+      "Tool Calling",
+      "Prompt Engineering",
+      "Vector Databases",
+    ],
   },
   {
-    name: "Deep Learning",
-    desc: "ANN, CNN, RNN, LSTM, Transformers",
-    icon: "🤖",
-    color: "from-pink-500 to-rose-400",
-    bg: "bg-rose-50",
+    category: "Backend Development",
+    items: [
+      "FastAPI",
+      "gRPC",
+      "REST APIs",
+      "Node.js",
+      "Express.js",
+      "Microservices",
+      "Async Programming",
+    ],
   },
   {
-    name: "Custom DL Systems",
-    desc: "Custom ANN/CNN kernels in C++/CUDA",
-    icon: "🧠",
-    color: "from-purple-600 to-pink-500",
-    bg: "bg-purple-50",
+    category: "Databases",
+    items: ["Microsoft SQL Server", "PostgreSQL", "MySQL", "MongoDB", "SQLite"],
   },
   {
-    name: "Python",
-    desc: "ML tooling, scripts, automation",
-    icon: "🐍",
-    color: "from-yellow-500 to-orange-400",
-    bg: "bg-yellow-50",
-  },
-  {
-    name: "Databases",
-    desc: "MongoDB, SQL, relational design",
-    icon: "💾",
-    color: "from-indigo-500 to-purple-400",
-    bg: "bg-purple-50",
-  },
-  {
-    name: "System Design",
-    desc: "Scalable backend architecture & patterns",
-    icon: "🏛️",
-    color: "from-teal-500 to-blue-400",
-    bg: "bg-cyan-50",
+    category: "DevOps / Infrastructure",
+    items: ["Git", "GitHub", "Docker", "Docker Compose", "Redis", "Linux", "Temporal"],
   },
 ];
 
 const Skills = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border bg-white shadow-sm">
-            <Target className="w-4 h-4 text-blue-600" />
-            <span className="text-sm font-semibold text-gray-700">
-              EXPERTISE
-            </span>
+    <section id="skills" className="py-24 bg-bg">
+      <div className="max-w-6xl mx-auto px-6">
+        <Reveal>
+          <div className="mb-14">
+            <p className="font-mono text-xs text-accent mb-2">./skills</p>
+            <h2 className="font-mono text-3xl sm:text-4xl font-bold text-text">
+              What I work with
+            </h2>
+            <p className="text-muted mt-3 max-w-xl">
+              Grouped the way I actually reach for them — low-level systems work,
+              model internals, and the backend plumbing that ties it together.
+            </p>
           </div>
+        </Reveal>
 
-          <h2 className="text-4xl font-black mt-6">
-            Skills & Technologies
-          </h2>
-
-          <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
-            A blend of low-level performance engineering, full-stack development,
-            and machine learning systems.
-          </p>
-        </div>
-
-        {/* Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {skills.map((skill, i) => (
-            <div key={i} className="relative group">
-              
-              {/* Gradient Border */}
-              <div
-                className={`absolute -inset-0.5 rounded-2xl bg-gradient-to-r ${skill.color} opacity-30 group-hover:opacity-70 transition`}
-              ></div>
-
-              {/* Card */}
-              <div
-                className={`relative p-8 rounded-2xl border bg-white/90 backdrop-blur-sm shadow-sm hover:shadow-lg transition-all duration-300 ${skill.bg}`}
-              >
-                <div className="flex items-start gap-4">
-                  <div className="text-4xl">{skill.icon}</div>
-
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900">
-                      {skill.name}
-                    </h3>
-                    <p className="text-sm text-gray-600 mt-1">
-                      {skill.desc}
-                    </p>
-                  </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          {skillGroups.map((group, i) => (
+            <Reveal key={group.category} delay={i * 60}>
+              <div className="h-full border border-border rounded-xl p-6 bg-surface hover:border-accent/50 transition-colors">
+                <h3 className="font-mono text-sm text-accent2 mb-4 tracking-wide">
+                  {group.category}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="font-mono text-xs px-3 py-1.5 rounded-md bg-bg border border-border text-text/90 hover:border-accent hover:text-accent transition-colors"
+                    >
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
-
-            </div>
+            </Reveal>
           ))}
         </div>
-
       </div>
     </section>
   );

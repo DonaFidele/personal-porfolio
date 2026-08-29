@@ -1,98 +1,132 @@
-import React from "react";
-import { Target, Cpu, Layers, Rocket } from "lucide-react";
+import React, { useState } from "react";
+import { Mail, Github, Linkedin, Code2, Sparkles, Copy, Check } from "lucide-react";
+import Reveal from "./Reveal";
+
+const EMAIL = "ansham.maurya.microsoft@gmail.com";
+
+const links = [
+  {
+    label: "Email",
+    value: EMAIL,
+    href: `mailto:${EMAIL}`,
+    icon: Mail,
+  },
+  {
+    label: "GitHub",
+    value: "github.com/ANSHAM1",
+    href: "https://github.com/ANSHAM1",
+    icon: Github,
+  },
+  {
+    label: "LinkedIn",
+    value: "ansham-maurya",
+    href: "https://www.linkedin.com/in/ansham-maurya-69ab80297/",
+    icon: Linkedin,
+  },
+  {
+    label: "LeetCode",
+    value: "Ansham_Maurya",
+    href: "https://leetcode.com/Ansham_Maurya/",
+    icon: Code2,
+  },
+  {
+    label: "Hugging Face",
+    value: "ANSHAM1",
+    href: "https://huggingface.co/ANSHAM1",
+    icon: Sparkles,
+  },
+];
 
 const Contacts = () => {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {
+      // clipboard API unavailable — link still works
+    }
+  };
+
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
-        {/* LEFT SIDE — About You (Non-repetitive) */}
-        <div>
-          <h3 className="text-3xl font-extrabold mb-6">Why Reach Out?</h3>
-
-          <p className="text-gray-600 mb-6 max-w-md leading-relaxed">
-            I specialize in building <strong>high-performance systems</strong>,{" "}
-            <strong>deep learning engines</strong>, and{" "}
-            <strong>backend architectures</strong>. Whether it’s system-level
-            engineering, ML infrastructure, or full-stack development — I enjoy
-            working on complex, meaningful problems.
-          </p>
-
-          <div className="space-y-5 text-gray-700">
-            <div className="flex items-center gap-3">
-              <Cpu className="w-5 h-5 text-purple-600" />
-              <span>Low-level engineering (C++, CUDA, Rust)</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <Layers className="w-5 h-5 text-blue-600" />
-              <span>Deep Learning systems & model internals</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <Target className="w-5 h-5 text-green-600" />
-              <span>Backend development & scalable APIs</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <Rocket className="w-5 h-5 text-pink-600" />
-              <span>
-                Open to internships, collaborations & research projects
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* RIGHT SIDE — Contact Form */}
-        <div>
-          <h3 className="text-3xl font-extrabold mb-6">Get in Touch</h3>
-
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert(
-                "Message recorded locally — connect backend API to make it functional."
-              );
-            }}
-            className="space-y-4"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                required
-                placeholder="Name"
-                className="p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-              />
-              <input
-                required
-                type="email"
-                placeholder="Email"
-                className="p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-              />
-            </div>
-
-            <textarea
-              required
-              placeholder="Write your message..."
-              rows={5}
-              className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-            />
-
-            <button
-              type="submit"
-              className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold hover:scale-105 transition"
-            >
-              Send Message
-            </button>
-
-            <p className="text-sm text-gray-500 mt-3">
-              Prefer email?
-              <a
-                href="mailto:ansham.maurya.microsoft@gmail.com"
-                className="text-blue-600 hover:underline"
-              >
-                ansham.maurya.microsoft@gmail.com
-              </a>
+    <section id="contact" className="py-24 bg-bg">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-14 items-start">
+          {/* LEFT — why reach out */}
+          <Reveal>
+            <p className="font-mono text-xs text-accent mb-2">./contact</p>
+            <h2 className="font-mono text-3xl sm:text-4xl font-bold text-text mb-6">
+              Let's talk systems
+            </h2>
+            <p className="text-muted leading-relaxed max-w-md mb-8">
+              I'm open to backend engineering, AI systems, and distributed
+              systems roles, along with focused collaborations or research
+              projects. If it involves building something from first
+              principles, I'm interested.
             </p>
-          </form>
+
+            <div className="space-y-4 font-mono text-sm text-text">
+              <div className="flex gap-3">
+                <span className="text-accent">▸</span>
+                <span>Low-level systems engineering — C++, CUDA, Rust</span>
+              </div>
+              <div className="flex gap-3">
+                <span className="text-accent">▸</span>
+                <span>Agentic AI & LLM orchestration pipelines</span>
+              </div>
+              <div className="flex gap-3">
+                <span className="text-accent">▸</span>
+                <span>Backend architecture & distributed systems</span>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* RIGHT — direct links */}
+          <Reveal delay={100}>
+            <div className="border border-border rounded-xl bg-surface overflow-hidden">
+              {links.map(({ label, value, href, icon: Icon }, i) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={label === "Email" ? undefined : "_blank"}
+                  rel="noopener noreferrer"
+                  className={`flex items-center justify-between px-5 py-4 hover:bg-surfaceHover transition-colors ${
+                    i !== links.length - 1 ? "border-b border-border" : ""
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-accent">
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="font-mono text-xs text-muted">{label}</p>
+                      <p className="font-mono text-sm text-text">{value}</p>
+                    </div>
+                  </div>
+
+                  {label === "Email" && (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        copyEmail();
+                      }}
+                      aria-label="Copy email address"
+                      className="text-muted hover:text-accent transition-colors p-2"
+                    >
+                      {copied ? (
+                        <Check className="w-4 h-4 text-accent2" />
+                      ) : (
+                        <Copy className="w-4 h-4" />
+                      )}
+                    </button>
+                  )}
+                </a>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
