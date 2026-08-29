@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Mail, Github, Linkedin, Code2, Sparkles, Copy, Check } from "lucide-react";
 import Reveal from "./Reveal";
 
-const EMAIL = "ansham.maurya.microsoft@gmail.com";
+const EMAIL = "anshammaurya2291@gmail.com";
 
 const links = [
   {
