@@ -4,53 +4,53 @@ import Reveal from "./Reveal";
 
 const projects = [
   {
-    title: "TorchLessCUDA",
+    title: "dona-chat",
     description:
-      "A deep learning framework built entirely from scratch in modern C++20 and CUDA — custom tensor ops, hand-written GPU kernels, and CNN training/inference with no ML frameworks underneath.",
-    tags: ["C++", "CUDA", "Deep Learning", "GPU Programming"],
-    github: "https://github.com/ANSHAM1/TOrchLessCUDA",
+      "A RAG-powered chatbot built with Next.js, Vercel AI SDK, and PostgreSQL (Neon) — enabling contextual retrieval and document-grounded conversations with an LLM.",
+    tags: ["Next.js", "TypeScript", "Vercel AI SDK", "RAG", "PostgreSQL"],
+    github: "https://github.com/DonaFidele/dona-chat",
     status: "Public",
   },
   {
-    title: "Insertion.AI",
+    title: "oxymore-generator-cq",
     description:
-      "A multi-agent engineering assistant that turns project ideas into structured development plans, initializes repos, tracks real progress through Git, and adapts execution using LLM orchestration.",
-    tags: ["Python", "LangGraph", "FastAPI", "Redis", "Temporal"],
-    github: "https://github.com/ANSHAM1/Insertion.AI",
+      "An AI that turns two opposing words (an oxymoron) into an original poem. Anyone can create, publish, and share their own verses, generated from their emotions in the moment. Powered by a language model and carefully crafted prompt engineering, for sincere poetry — never generic.",
+    tags: ["Next.js", "Vercel AI SDK", "Prompt Engineering", "Poetry Generation"],
+    github: "https://github.com/DonaFidele/oxymore-generator-cq",
     status: "Public",
   },
+{
+  title: "Puissance4",
+  description:
+    "A terminal-based implementation of Connect Four in Python, playable against a rule-based computer opponent. The opponent evaluates the board to detect winning moves, block the player's threats, and otherwise picks a strategic column — all through hand-coded decision logic, no machine learning involved.",
+  tags: ["Python", "Game Development", "Algorithm Design"],
+  github: "https://github.com/DonaFidele/Puissance4",
+  status: "Public",
+},
+{
+  title: "JeuPendu",
+  description:
+    "A terminal-based Hangman game in Python. The player guesses a randomly selected word letter by letter within a limited number of attempts, with ASCII-art intro/win screens and a persistent score-tracking system saved to a local file.",
+  tags: ["Python", "Game Development", "File I/O"],
+  github: "https://github.com/DonaFidele/JeuPendu",
+  status: "Public",
+},
   {
-    title: "SentinelAI_Nids",
-    description:
-      "An AI-driven network intrusion detection system — LSTM-based anomaly detection running on top of real-time, async packet processing in Rust.",
-    tags: ["Rust", "Async", "Deep Learning", "Cybersecurity"],
-    github: "https://github.com/ANSHAM1/SentinelAI_Nids",
-    status: "Public",
-  },
+  title: "friare-mentorship-plateforme",
+  description:
+    "Frontend for the FRIARE mentorship program platform (Fondation Ratheil pour une IA Responsable et Efficiente). Built with React and Tailwind CSS, featuring role-based access (admin/mentor/mentee) for recruitment management, scheduling, courses, and certificate generation.",
+  tags: ["React", "Tailwind CSS", "Role-Based Access"],
+  github: null,
+  status: "Private",
+},
   {
-    title: "ContextFlow.AI",
-    description:
-      "An AI research assistant powered by LLMs, RAG, and LangGraph for document understanding, multi-step reasoning, and context-aware answers.",
-    tags: ["Python", "RAG", "LangChain", "Vector DB"],
-    github: "https://github.com/ANSHAM1/ContextFlow.AI",
-    status: "Public",
-  },
-  {
-    title: "ExperimentOS",
-    description:
-      "A distributed platform for defining, executing, monitoring, and analyzing long-running ML experiments, built on an async, event-driven backend.",
-    tags: ["Python", "FastAPI", "PostgreSQL", "Distributed Systems"],
-    github: null,
-    status: "Private",
-  },
-  {
-    title: "Embedded_LSM_KV_Database",
-    description:
-      "A lightweight embedded key-value database built from scratch in modern C++, implementing an LSM-tree storage engine with write-ahead logging and SSTable persistence.",
-    tags: ["C++", "Databases", "Systems Programming"],
-    github: "https://github.com/ANSHAM1/Embedded_LSM_KV_Database",
-    status: "Public",
-  },
+  title: "friare-mentorship-back",
+  description:
+    "Backend for the FRIARE mentorship program platform (Fondation Ratheil pour une IA Responsable et Efficiente). Built with Laravel and MySQL, exposing REST APIs for role-based user management (admin/mentor/mentee), recruitment, scheduling, and certificate generation.",
+  tags: ["Laravel", "MySQL", "REST APIs"],
+  github: null,
+  status: "Private",
+},
 ];
 
 const Projects = () => {
@@ -132,7 +132,7 @@ const Projects = () => {
         <Reveal delay={150}>
           <div className="mt-10 text-center">
             <a
-              href="https://github.com/ANSHAM1?tab=repositories"
+              href="https://github.com/DonaFidele?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 font-mono text-sm text-muted hover:text-accent transition-colors"

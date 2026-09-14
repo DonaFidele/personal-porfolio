@@ -4,55 +4,30 @@ import Reveal from "./Reveal";
 const skillGroups = [
   {
     category: "Languages",
-    items: ["Python", "C++", "Rust", "Java", "JavaScript"],
+    items: ["Python", "TypeScript", "JavaScript", "Java", "C++", "C", "PHP", "SQL"],
   },
   {
     category: "AI / Machine Learning",
-    items: [
-      "PyTorch",
-      "Keras",
-      "NumPy",
-      "Pandas",
-      "CUDA",
-      "ANN",
-      "RNN",
-      "LSTM",
-      "CNN",
-      "Transformers",
-    ],
+    items: ["PyTorch", "TensorFlow", "Keras", "NumPy", "Pandas", "scikit-learn", "Matplotlib", "Seaborn", "NLTK", "Hugging Face Transformers", "ANN", "CNN", "RNN/LSTM"]
+,
   },
   {
     category: "LLM / Agentic AI",
-    items: [
-      "LangChain",
-      "LangGraph",
-      "RAG",
-      "AI Agents",
-      "Tool Calling",
-      "Prompt Engineering",
-      "Vector Databases",
-    ],
+    items:  ["Vercel AI SDK", "RAG", "Hugging Face"],
   },
   {
-    category: "Backend Development",
-    items: [
-      "FastAPI",
-      "gRPC",
-      "REST APIs",
-      "Node.js",
-      "Express.js",
-      "Microservices",
-      "Async Programming",
-    ],
+    category: "Full-Stack Development",
+    items: ["React", "Next.js", "Django", "Laravel", "Node.js", "Express.js", "Tailwind CSS", "Bootstrap", "REST APIs", "HTML", "CSS"],
+  },
+    {
+    category: "DevOps / Infrastructure",
+    items: ["Git", "GitHub", "Docker", "Linux/bash", "Postman", "Jupyter Notebook", "Google Colab", "Figma", "Photoshop", "Power BI", "Excel"],
   },
   {
     category: "Databases",
-    items: ["Microsoft SQL Server", "PostgreSQL", "MySQL", "MongoDB", "SQLite"],
+    items: ["MySQL", "PostgreSQL", "MongoDB", "SQLite"],
   },
-  {
-    category: "DevOps / Infrastructure",
-    items: ["Git", "GitHub", "Docker", "Docker Compose", "Redis", "Linux", "Temporal"],
-  },
+
 ];
 
 const Skills = () => {

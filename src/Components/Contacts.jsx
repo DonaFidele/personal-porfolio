@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Mail, Github, Linkedin, Code2, Sparkles, Copy, Check } from "lucide-react";
 import Reveal from "./Reveal";
 
-const EMAIL = "anshammaurya2291@gmail.com";
+const EMAIL = "houekpoehafidele@gmail.com";
 
 const links = [
   {
@@ -13,26 +13,26 @@ const links = [
   },
   {
     label: "GitHub",
-    value: "github.com/ANSHAM1",
-    href: "https://github.com/ANSHAM1",
+    value: "github.com/DonaFidele",
+    href: "https://github.com/DonaFidele",
     icon: Github,
   },
   {
     label: "LinkedIn",
-    value: "ansham-maurya",
-    href: "https://www.linkedin.com/in/ansham-maurya-69ab80297/",
+    value: "dona-houekpoeha",
+    href: "https://www.linkedin.com/in/dona-houekpoeha/",
     icon: Linkedin,
   },
   {
     label: "LeetCode",
-    value: "Ansham_Maurya",
-    href: "https://leetcode.com/Ansham_Maurya/",
+    value: "houekpoehafidele",
+    href: "https://leetcode.com/u/houekpoehafidele/",
     icon: Code2,
   },
   {
     label: "Hugging Face",
-    value: "ANSHAM1",
-    href: "https://huggingface.co/ANSHAM1",
+    value: "DonaFidele",
+    href: "https://huggingface.co/DonaFidele",
     icon: Sparkles,
   },
 ];
@@ -61,24 +61,20 @@ const Contacts = () => {
               Let's talk systems
             </h2>
             <p className="text-muted leading-relaxed max-w-md mb-8">
-              I'm open to backend engineering, AI systems, and distributed
-              systems roles, along with focused collaborations or research
-              projects. If it involves building something from first
-              principles, I'm interested.
-            </p>
+I'm open to AI/RAG systems, and agentic AI collaborations or research projects, full-stack development, with a growing interest in computer vision. If it involves turning an idea into something real and usable, I'm interested.            </p>
 
             <div className="space-y-4 font-mono text-sm text-text">
               <div className="flex gap-3">
                 <span className="text-accent">▸</span>
-                <span>Low-level systems engineering — C++, CUDA, Rust</span>
+                <span>Full-stack web development - React, Java, Laravel</span>
               </div>
               <div className="flex gap-3">
                 <span className="text-accent">▸</span>
-                <span>Agentic AI & LLM orchestration pipelines</span>
+                <span>Agentic AI & RAG pipelines - Vercel AI SDK</span>
               </div>
               <div className="flex gap-3">
                 <span className="text-accent">▸</span>
-                <span>Backend architecture & distributed systems</span>
+                <span>Machine Learning & NLP - exploring Computer Vision</span>
               </div>
             </div>
           </Reveal>

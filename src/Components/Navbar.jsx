@@ -29,7 +29,7 @@ const Navbar = ({ scrollY }) => {
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
         {/* Branding */}
         <a href="#top" className="font-mono text-sm sm:text-base text-text flex items-center gap-1 shrink-0">
-          <span className="text-accent">ansham</span>
+          <span className="text-accent">dona</span>
           <span className="text-muted">@</span>
           <span className="text-accent2">systems</span>
           <span className="text-muted">:~$</span>
@@ -82,8 +82,8 @@ const Navbar = ({ scrollY }) => {
 
           <div className="flex gap-2">
             {[
-              { Icon: Github, link: "https://github.com/ANSHAM1", label: "GitHub" },
-              { Icon: Linkedin, link: "https://www.linkedin.com/in/ansham-maurya-69ab80297/", label: "LinkedIn" },
+              { Icon: Github, link: "https://github.com/DonaFidele", label: "GitHub" },
+              { Icon: Linkedin, link: "https://www.linkedin.com/in/dona-houekpoeha/", label: "LinkedIn" },
             ].map(({ Icon, link, label }) => (
               <a
                 key={label}
@@ -137,8 +137,8 @@ const Navbar = ({ scrollY }) => {
             ))}
           </div>
           <div className="flex gap-3 pt-2">
-            <a href="https://github.com/ANSHAM1" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-accent">GitHub</a>
-            <a href="https://www.linkedin.com/in/ansham-maurya-69ab80297/" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-accent">LinkedIn</a>
+            <a href="https://github.com/DonaFidele" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-accent">GitHub</a>
+            <a href="https://www.linkedin.com/in/dona-houekpoeha/" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-accent">LinkedIn</a>
           </div>
         </div>
       )}

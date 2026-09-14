@@ -2,7 +2,7 @@ import React from "react";
 import { Mail, ArrowRight, Circle } from "lucide-react";
 import Terminal from "./Terminal";
 
-const focusAreas = ["Agentic AI", "Backend Systems", "Distributed Computing", "Deep Learning"];
+const focusAreas = ["Agentic AI", "RAG Systems", "NLP" ,"Full-Stack Development"];
 
 const Hero = ({ isLoaded }) => {
   return (
@@ -21,16 +21,14 @@ const Hero = ({ isLoaded }) => {
             </div>
 
             <h1 className="font-mono text-4xl sm:text-5xl font-bold leading-[1.15] text-text">
-              I build systems that
+              I turn ideas into reality
               <br />
-              <span className="text-accent">think, scale,</span> and{" "}
-              <span className="text-accent2">stay up.</span>
+              <span className="text-accent">with AI</span> and{" "}
+              <span className="text-accent2">ambitions into systems.</span>
             </h1>
 
             <p className="text-muted text-base sm:text-lg max-w-lg leading-relaxed">
-              AI Systems Engineer working across agentic AI, backend & distributed
-              systems, and deep learning — from custom CUDA kernels to multi-agent
-              LLM pipelines running in production.
+AI Systems Engineer working across full-stack web development and agentic AI , from React interfaces to RAG pipelines and multi-agent systems in production.
             </p>
 
             <div className="flex flex-wrap gap-2">

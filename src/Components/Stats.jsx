@@ -17,15 +17,15 @@ const stats = [
   },
   {
     icon: <Users className="w-5 h-5" />,
-    value: "189",
+    value: "30",
     label: "GitHub followers",
-    sub: "github.com/ANSHAM1",
+    sub: "github.com/DonaFidele",
   },
   {
     icon: <Layers className="w-5 h-5" />,
     value: "20+",
     label: "Technologies in the stack",
-    sub: "Python, C++, Rust, CUDA, FastAPI, LangGraph...",
+    sub: "Python, TypeScript, Java, React, Vercel AI SDK, PostgreSQL...",
   },
 ];
 

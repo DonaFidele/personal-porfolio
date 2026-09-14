@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 
 // Each entry: a command line and the output it prints.
 const sequence = [
-  { cmd: "whoami", out: "Ansham Maurya — AI Systems Engineer" },
-  {
+  { cmd: "whoami", out: "Dona Houekpoeha — AI Systems Engineer" },
+{
     cmd: "cat focus.txt",
-    out: "Agentic AI · Backend & Distributed Systems · Deep Learning",
-  },
-  { cmd: "cat stack.txt", out: "Python · C++ · Rust · FastAPI · CUDA · LangGraph" },
+    out: "Agentic AI · NLP · Computer Vision",
+},
+{
+    cmd: "cat stack.txt",
+    out: "Python · TypeScript · React · Java · Vercel AI SDK · PostgreSQL",
+},
   { cmd: "status --check", out: "[ONLINE] open to collaborations & internships" },
 ];
 
@@ -67,7 +70,7 @@ const Terminal = () => {
           <span className="w-3 h-3 rounded-full bg-[#FF5F56]" />
           <span className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
           <span className="w-3 h-3 rounded-full bg-[#27C93F]" />
-          <span className="ml-3 text-xs font-mono text-muted">ansham@systems — bash</span>
+          <span className="ml-3 text-xs font-mono text-muted">dona@systems — bash</span>
         </div>
 
         {/* body */}

@@ -32,8 +32,8 @@ export default function Portfolio() {
 
       <footer className="py-10 border-t border-border">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs text-muted">
-          <span>ansham@systems:~$ echo "thanks for stopping by"</span>
-          <span>© {new Date().getFullYear()} Ansham Maurya</span>
+          <span>dona@systems:~$ echo "thanks for stopping by"</span>
+          <span>© {new Date().getFullYear()} Dona Houekpoeha</span>
         </div>
       </footer>
     </div>
