@@ -82,7 +82,7 @@ I'm open to AI/RAG systems, and agentic AI collaborations or research projects, 
           {/* RIGHT — direct links */}
           <Reveal delay={100}>
             <div className="border border-border rounded-xl bg-surface overflow-hidden">
-              {links.map(({ label, value, href, icon: Icon }, i) => (
+              {links.map(({ label, value, href, icon }, i) => (
                 <a
                   key={label}
                   href={href}
@@ -94,7 +94,7 @@ I'm open to AI/RAG systems, and agentic AI collaborations or research projects, 
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-accent">
-                      <Icon className="w-4 h-4" />
+                      {React.createElement(icon, { className: "w-4 h-4" })}
                     </div>
                     <div>
                       <p className="font-mono text-xs text-muted">{label}</p>

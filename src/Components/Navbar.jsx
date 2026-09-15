@@ -82,9 +82,9 @@ const Navbar = ({ scrollY }) => {
 
           <div className="flex gap-2">
             {[
-              { Icon: Github, link: "https://github.com/DonaFidele", label: "GitHub" },
-              { Icon: Linkedin, link: "https://www.linkedin.com/in/dona-houekpoeha/", label: "LinkedIn" },
-            ].map(({ Icon, link, label }) => (
+              { icon: Github, link: "https://github.com/DonaFidele", label: "GitHub" },
+              { icon: Linkedin, link: "https://www.linkedin.com/in/dona-houekpoeha/", label: "LinkedIn" },
+            ].map(({ icon, link, label }) => (
               <a
                 key={label}
                 href={link}
@@ -93,7 +93,7 @@ const Navbar = ({ scrollY }) => {
                 aria-label={label}
                 className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors"
               >
-                <Icon className="w-4 h-4" />
+                {React.createElement(icon, { className: "w-4 h-4" })}
               </a>
             ))}
           </div>
