@@ -9,9 +9,9 @@ const navLinks = [
 ];
 
 const resumes = [
-  { label: "Systems Engineer", href: "resume/SE_Role_Resume.pdf" },
-  { label: "AI / Deep Learning", href: "resume/AI_Role_Resume.pdf" },
-  { label: "Web Developer", href: "resume/WD_Role_Resume.pdf" },
+  { label: "Systems Engineer", href: "/resume/SE_Role_Resume.pdf" },
+  { label: "AI / Deep Learning", href: "/resume/AI_Role_Resume.pdf" },
+  { label: "Web Developer", href: "/resume/WD_Role_Resume.pdf" },
 ];
 
 const Navbar = ({ scrollY }) => {

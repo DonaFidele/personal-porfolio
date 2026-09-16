@@ -83,7 +83,7 @@ export default function CertificatesSection() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
           {certificates.slice(0, 6).map((certificate, index) => (
             <Reveal key={certificate.title} delay={index * 50}>
               <CertificateCard certificate={certificate} />
