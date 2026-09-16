@@ -9,6 +9,7 @@ const projects = [
       "A RAG-powered chatbot built with Next.js, Vercel AI SDK, and PostgreSQL (Neon) — enabling contextual retrieval and document-grounded conversations with an LLM.",
     tags: ["Next.js", "TypeScript", "Vercel AI SDK", "RAG", "PostgreSQL"],
     github: "https://github.com/DonaFidele/dona-chat",
+    liveUrl: "https://rag-ai-chatbot-indol.vercel.app",
     status: "Public",
   },
   {
@@ -17,6 +18,7 @@ const projects = [
       "An AI that turns two opposing words (an oxymoron) into an original poem. Anyone can create, publish, and share their own verses, generated from their emotions in the moment. Powered by a language model and carefully crafted prompt engineering, for sincere poetry — never generic.",
     tags: ["Next.js", "Vercel AI SDK", "Prompt Engineering", "Poetry Generation"],
     github: "https://github.com/DonaFidele/oxymore-generator-cq",
+    liveUrl: "https://oxymore-generator.vercel.app",
     status: "Public",
   },
 {
@@ -107,23 +109,37 @@ const Projects = () => {
                   </div>
                 </div>
 
-                {p.github ? (
-                  <a
-                    href={p.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 font-mono text-sm text-text hover:text-accent transition-colors w-fit"
-                  >
-                    <Github className="w-4 h-4" />
-                    View source
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </a>
-                ) : (
-                  <span className="inline-flex items-center gap-2 font-mono text-sm text-muted w-fit">
-                    <Lock className="w-4 h-4" />
-                    Private repository
-                  </span>
-                )}
+                <div className="flex items-center justify-between gap-4">
+                  {p.github ? (
+                    <a
+                      href={p.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 font-mono text-sm text-text hover:text-accent transition-colors w-fit"
+                    >
+                      <Github className="w-4 h-4" />
+                      View source
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center gap-2 font-mono text-sm text-muted w-fit">
+                      <Lock className="w-4 h-4" />
+                      Private repository
+                    </span>
+                  )}
+
+                  {p.liveUrl && (
+                    <a
+                      href={p.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 font-mono text-sm text-accent hover:text-text transition-colors w-fit"
+                    >
+                      View live
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                </div>
               </div>
             </Reveal>
           ))}
