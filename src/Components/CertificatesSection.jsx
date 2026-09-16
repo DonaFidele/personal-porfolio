@@ -1,25 +1,14 @@
 import React, { useState } from "react";
 import {
-  Award,
   Check,
   Clipboard,
   Download,
   ExternalLink,
 } from "lucide-react";
 import Reveal from "./Reveal";
+import { certificates } from "../../data/certificates";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/dona-houekpoeha/";
-
-const certificates = [
-  { title: "Introduction to Git and GitHub", issuer: "Google", date: "2024", url: "https://www.coursera.org/", downloadUrl: "#" },
-  { title: "Responsive Web Design", issuer: "freeCodeCamp", date: "2024", url: "https://www.freecodecamp.org/", downloadUrl: "#" },
-  { title: "JavaScript Algorithms and Data Structures", issuer: "freeCodeCamp", date: "2024", url: "https://www.freecodecamp.org/", downloadUrl: "#" },
-  { title: "React Basics", issuer: "Meta", date: "2023", url: "https://www.coursera.org/", downloadUrl: "#" },
-  { title: "Python for Everybody", issuer: "University of Michigan", date: "2023", url: "https://www.coursera.org/", downloadUrl: "#" },
-  { title: "SQL for Data Science", issuer: "University of California, Davis", date: "2023", url: "https://www.coursera.org/", downloadUrl: "#" },
-  { title: "The Fundamentals of Digital Marketing", issuer: "Google", date: "2022", url: "https://learndigital.withgoogle.com/", downloadUrl: "#" },
-  { title: "AWS Cloud Practitioner Essentials", issuer: "Amazon Web Services", date: "2022", url: "https://aws.amazon.com/training/", downloadUrl: "#" },
-];
 
 function CertificateCard({ certificate }) {
   const [copied, setCopied] = useState(false);
@@ -36,10 +25,12 @@ function CertificateCard({ certificate }) {
 
   return (
     <article className="group relative overflow-hidden rounded-lg border border-[#30363d] bg-[#161b22] transition-all duration-300 ease-out hover:scale-[1.04] hover:border-[#f0883e] focus-within:scale-[1.04] focus-within:border-[#f0883e]">
-      <div className="flex aspect-[1.55] items-center justify-center border-b border-[#30363d] bg-[#0d1117] p-6">
-        <div className="flex size-16 items-center justify-center rounded-md border border-[#f0883e]/40 text-[#f0883e]">
-          <Award aria-hidden="true" className="size-8" strokeWidth={1.5} />
-        </div>
+      <div className="aspect-[1.55] overflow-hidden border-b border-[#30363d] bg-[#0d1117]">
+        <img
+          src={certificate.imageUrl}
+          alt={`Preview of ${certificate.title} certificate`}
+          className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
       </div>
 
       <div className="flex min-h-28 flex-col gap-2 p-4">
