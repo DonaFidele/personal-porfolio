@@ -68,7 +68,7 @@ const Terminal = () => {
         {/* title bar */}
         <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-[#111925]">
           <span className="w-3 h-3 rounded-full bg-[#FF5F56]" />
-          <span className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
+          <span className="w-3 h-3 rounded-full bg-[#f0883e]" />
           <span className="w-3 h-3 rounded-full bg-[#27C93F]" />
           <span className="ml-3 text-xs font-mono text-muted">dona@systems — bash</span>
         </div>

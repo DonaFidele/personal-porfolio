@@ -13,7 +13,7 @@ body {
 }
 
 ::selection {
-  background: #E8A33D;
+  background: #f0883e;
   color: #0F1620;
 }
 
@@ -34,6 +34,15 @@ body {
 .reveal-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes gentle-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 /* thin custom scrollbar to match the console feel */
