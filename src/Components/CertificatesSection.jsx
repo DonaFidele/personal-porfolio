@@ -8,7 +8,7 @@ import {
 import Reveal from "./Reveal";
 import { certificates } from "../../data/certificates";
 
-const LINKEDIN_URL = "https://www.linkedin.com/in/dona-houekpoeha/";
+const LINKEDIN_URL = "https://www.linkedin.com/in/dona-houekpoeha/details/certifications";
 
 function CertificateCard({ certificate }) {
   const [copied, setCopied] = useState(false);
