@@ -87,14 +87,13 @@ export default function CertificatesSection() {
     <section id="certificates" className="border-y border-[#30363d] bg-[#0d1117] py-24">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <div className="mb-10 flex items-center gap-4">
-            <p className="shrink-0 font-mono text-xs text-[#f0883e]">./certificates</p>
-            <div aria-hidden="true" className="h-px flex-1 bg-[#30363d]" />
+          <div className="mb-10">
+            <p className="font-mono text-xs text-[#f0883e]">./certificates</p>
           </div>
         </Reveal>
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4">
-          {certificates.map((certificate, index) => (
+          {certificates.slice(0, 6).map((certificate, index) => (
             <Reveal key={certificate.title} delay={index * 50}>
               <CertificateCard certificate={certificate} />
             </Reveal>
