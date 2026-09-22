@@ -102,7 +102,7 @@ useEffect(() => {
             <a href="https://www.linkedin.com/in/dona-houekpoeha/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors">
               <Linkedin className="w-4 h-4" />
             </a>
-            <button type="button" onClick={async () => { try { await navigator.clipboard.writeText(EMAIL); setCopied(true); setTimeout(() => setCopied(false), 1800); } catch {} }} aria-label="Copier l'adresse email" className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors">
+            <button type="button" onClick={async () => { try { await navigator.clipboard.writeText(EMAIL); setCopied(true); setTimeout(() => setCopied(false), 1800); } catch { setCopied(false); } }} aria-label="Copier l'adresse email" className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors">
               {copied ? <Check className="w-4 h-4" /> : <Mail className="w-4 h-4" />}
             </button>
             <a href="https://leetcode.com/u/houekpoehafidele/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode" className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors">
@@ -154,7 +154,7 @@ useEffect(() => {
           <div className="flex flex-wrap gap-3 pt-2 border-t border-border">
             <a href="https://github.com/DonaFidele" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-accent">GitHub</a>
             <a href="https://www.linkedin.com/in/dona-houekpoeha/" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-accent">LinkedIn</a>
-            <button type="button" onClick={async () => { try { await navigator.clipboard.writeText(EMAIL); setCopied(true); setTimeout(() => setCopied(false), 1800); } catch {} }} className="text-muted hover:text-accent">{copied ? "Email copié" : "Email"}</button>
+            <button type="button" onClick={async () => { try { await navigator.clipboard.writeText(EMAIL); setCopied(true); setTimeout(() => setCopied(false), 1800); } catch { setCopied(false); } }} className="text-muted hover:text-accent">{copied ? "Email copié" : "Email"}</button>
             <a href="https://leetcode.com/u/houekpoehafidele/" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-accent">LeetCode</a>
             <a href="https://huggingface.co/DonaFidele" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-accent">Hugging Face</a>
           </div>
