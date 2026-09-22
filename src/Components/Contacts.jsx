@@ -66,11 +66,11 @@ I'm open to AI/RAG systems, and agentic AI collaborations or research projects, 
             <div className="space-y-4 font-mono text-sm text-text">
               <div className="flex gap-3">
                 <span className="text-accent">▸</span>
-                <span>Full-stack web development - React, Java, Laravel</span>
+                <span>Full-stack web development - React, TypeScript, Laravel</span>
               </div>
               <div className="flex gap-3">
                 <span className="text-accent">▸</span>
-                <span>Agentic AI & RAG pipelines - Vercel AI SDK</span>
+                <span>LLM Applications & RAG pipelines - Vercel AI SDK</span>
               </div>
               <div className="flex gap-3">
                 <span className="text-accent">▸</span>

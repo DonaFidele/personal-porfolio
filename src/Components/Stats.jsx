@@ -5,25 +5,25 @@ import Reveal from "./Reveal";
 const stats = [
   {
     icon: <FolderGit2 className="w-5 h-5" />,
-    value: "15+",
+    value: "35+",
     label: "Repositories shipped",
-    sub: "From-scratch DL engines, systems tools, AI agents",
+    sub: "Full-stack apps, RAG systems, and course projects",
   },
   {
     icon: <Brain className="w-5 h-5" />,
-    value: "10+",
+    value: "7+",
     label: "ML / DL architectures",
-    sub: "ANN, CNN, RNN, LSTM, Transformers — built by hand",
+    sub: "ANN, CNN, RNN, LSTM, Transformers — studied, coded in guided labs",
   },
   {
     icon: <Users className="w-5 h-5" />,
-    value: "30",
+    value: "180+",
     label: "GitHub followers",
     sub: "github.com/DonaFidele",
   },
   {
     icon: <Layers className="w-5 h-5" />,
-    value: "20+",
+    value: "15+",
     label: "Technologies in the stack",
     sub: "Python, TypeScript, Java, React, Vercel AI SDK, PostgreSQL...",
   },

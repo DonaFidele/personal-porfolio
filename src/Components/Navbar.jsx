@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState, useRef, useEffect } from "react";
 import { Github, Linkedin, ChevronDown, FileText, Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -10,13 +11,24 @@ const navLinks = [
 
 const resumes = [
   { label: "Systems Engineer", href: "/resume/SE_Role_Resume.pdf" },
-  { label: "AI / Deep Learning", href: "/resume/AI_Role_Resume.pdf" },
-  { label: "Web Developer", href: "/resume/WD_Role_Resume.pdf" },
+  { label: "AI / Data Scientist", href: "/resume/AI_Role_Resume.pdf" },
+  { label: "Technology Innovation Leader", href: "/resume/WD_Role_Resume.pdf" },
 ];
 
 const Navbar = ({ scrollY }) => {
   const [open, setOpen] = useState(false);
   const [resumeOpen, setResumeOpen] = useState(false);
+  const resumeRef = useRef(null);
+
+useEffect(() => {
+  const handleClickOutside = (e) => {
+    if (resumeRef.current && !resumeRef.current.contains(e.target)) {
+      setResumeOpen(false);
+    }
+  };
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => document.removeEventListener("mousedown", handleClickOutside);
+}, []);
 
   return (
     <nav
@@ -33,7 +45,7 @@ const Navbar = ({ scrollY }) => {
           <span className="text-muted">@</span>
           <span className="text-accent2">systems</span>
           <span className="text-muted">:~$</span>
-          <span className="w-2 h-4 bg-accent ml-1 animate-blink" />
+          <scan className="w-2 h-4 bg-accent ml-1 animate-blink" />
         </a>
 
         {/* Desktop links */}
@@ -52,10 +64,10 @@ const Navbar = ({ scrollY }) => {
 
         {/* Right side */}
         <div className="hidden md:flex items-center gap-4">
-          <div className="relative">
+          <div className="relative" ref={resumeRef}>
             <button
               onClick={() => setResumeOpen((v) => !v)}
-              onBlur={() => setTimeout(() => setResumeOpen(false), 150)}
+              // onBlur={() => setTimeout(() => setResumeOpen(false), 150)}
               className="flex items-center gap-2 px-4 py-2 rounded-md border border-border text-sm font-mono text-text hover:border-accent hover:text-accent transition-colors"
             >
               <FileText className="w-4 h-4" />

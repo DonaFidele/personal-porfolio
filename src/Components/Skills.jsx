@@ -12,7 +12,7 @@ const skillGroups = [
 ,
   },
   {
-    category: "LLM / Agentic AI",
+    category: "LLM",
     items:  ["Vercel AI SDK", "RAG", "Hugging Face"],
   },
   {

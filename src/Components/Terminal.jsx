@@ -5,7 +5,7 @@ const sequence = [
   { cmd: "whoami", out: "Dona Houekpoeha — AI Systems Engineer" },
 {
     cmd: "cat focus.txt",
-    out: "Agentic AI · NLP · Computer Vision",
+    out: "Machine Learning · NLP · LLM Applications",
 },
 {
     cmd: "cat stack.txt",

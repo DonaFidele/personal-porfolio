@@ -2,7 +2,7 @@ import React from "react";
 import { Mail, ArrowRight, Circle } from "lucide-react";
 import Terminal from "./Terminal";
 
-const focusAreas = ["Agentic AI", "RAG Systems", "NLP" ,"Full-Stack Development"];
+const focusAreas = ["LLM Applications", "RAG Systems", "NLP" ,"Full-Stack Development"];
 
 const Hero = ({ isLoaded }) => {
   return (
@@ -28,8 +28,7 @@ const Hero = ({ isLoaded }) => {
             </h1>
 
             <p className="text-muted text-base sm:text-lg max-w-lg leading-relaxed">
-AI Systems Engineer working across full-stack web development and agentic AI , from React interfaces to RAG pipelines and multi-agent systems in production.
-            </p>
+AI Systems Engineer working across full-stack web development and LLM applications, from React interfaces to RAG pipelines and LLM-powered applications in production.            </p>
 
             <div className="flex flex-wrap gap-2">
               {focusAreas.map((f) => (

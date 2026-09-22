@@ -4,6 +4,14 @@ import Reveal from "./Reveal";
 
 const projects = [
   {
+  title: "DeliveryOptimizationAnalysis",
+  description:
+    "An exploratory data analysis of 100K+ ride-hailing trips across Togo, Benin, and Gabon — uncovering acceptance and cancellation rates, wait times, and driver performance by city and service type to surface where logistics break down.",
+  tags: ["Python", "Pandas", "Data Analysis", "Jupyter Notebook", "Data Visualization"],
+  github: "https://github.com/DonaFidele/DeliveryOptimizationAnalysis/tree/main",
+  status: "Public",
+},
+  {
     title: "dona-chat",
     description:
       "A RAG-powered chatbot built with Next.js, Vercel AI SDK, and PostgreSQL (Neon) — enabling contextual retrieval and document-grounded conversations with an LLM.",
@@ -27,14 +35,6 @@ const projects = [
     "A terminal-based implementation of Connect Four in Python, playable against a rule-based computer opponent. The opponent evaluates the board to detect winning moves, block the player's threats, and otherwise picks a strategic column — all through hand-coded decision logic, no machine learning involved.",
   tags: ["Python", "Game Development", "Algorithm Design"],
   github: "https://github.com/DonaFidele/Puissance4",
-  status: "Public",
-},
-{
-  title: "JeuPendu",
-  description:
-    "A terminal-based Hangman game in Python. The player guesses a randomly selected word letter by letter within a limited number of attempts, with ASCII-art intro/win screens and a persistent score-tracking system saved to a local file.",
-  tags: ["Python", "Game Development", "File I/O"],
-  github: "https://github.com/DonaFidele/JeuPendu",
   status: "Public",
 },
   {
