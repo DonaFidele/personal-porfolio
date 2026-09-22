@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import Hero from "./Hero";
 import Stats from "./Stats";
 import Skills from "./Skills";
+import Experiences from "./Experiences";
 import Projects from "./Projects";
 import CertificatesSection from "./CertificatesSection";
 import Contacts from "./Contacts";
@@ -36,6 +37,7 @@ export default function Portfolio() {
       <main>
         <Hero isLoaded={isLoaded} />
         <Stats />
+        <Experiences />
         <Skills />
         <Projects />
         <CertificatesSection />

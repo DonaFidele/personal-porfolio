@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Send } from "lucide-react";
 import Reveal from "./Reveal";
 
 const EMAIL = "houekpoehafidele@gmail.com";
 
 const Contacts = () => {
+  const [isSent, setIsSent] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -14,6 +15,7 @@ const Contacts = () => {
     const message = formData.get("message");
     const subject = encodeURIComponent(`Portfolio contact from ${name}`);
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+    setIsSent(true);
     window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
   };
 
@@ -100,6 +102,7 @@ I'm open to AI/RAG systems, and agentic AI collaborations or research projects, 
                     <Send aria-hidden="true" className="h-4 w-4" />
                     Send message
                   </button>
+                  {isSent && <p role="status" className="font-mono text-xs text-accent">Votre client email a été ouvert pour envoyer le message.</p>}
                 </div>
               </form>
 
