@@ -4,6 +4,7 @@ import { Github, Linkedin, Mail, Code2, Sparkles, ChevronDown, FileText, Menu, X
 
 const navLinks = [
   { label: "about", href: "#about" },
+  { label: "experiences", href: "#experiences" },
   { label: "skills", href: "#skills" },
   { label: "projects", href: "#projects" },
   { label: "contact", href: "#contact" },
@@ -102,9 +103,12 @@ useEffect(() => {
             <a href="https://www.linkedin.com/in/dona-houekpoeha/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors">
               <Linkedin className="w-4 h-4" />
             </a>
-            <button type="button" onClick={async () => { try { await navigator.clipboard.writeText(EMAIL); setCopied(true); setTimeout(() => setCopied(false), 1800); } catch { setCopied(false); } }} aria-label="Copier l'adresse email" className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors">
-              {copied ? <Check className="w-4 h-4" /> : <Mail className="w-4 h-4" />}
-            </button>
+            <div className="relative">
+              <button type="button" onClick={async () => { try { await navigator.clipboard.writeText(EMAIL); setCopied(true); setTimeout(() => setCopied(false), 1800); } catch { setCopied(false); } }} aria-label="Copier l'adresse email" className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors">
+                {copied ? <Check className="w-4 h-4" /> : <Mail className="w-4 h-4" />}
+              </button>
+              {copied && <span role="status" className="absolute right-0 top-full mt-2 whitespace-nowrap rounded border border-accent bg-surface px-2 py-1 font-mono text-[10px] text-accent shadow-lg">copié</span>}
+            </div>
             <a href="https://leetcode.com/u/houekpoehafidele/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode" className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors">
               <Code2 className="w-4 h-4" />
             </a>
