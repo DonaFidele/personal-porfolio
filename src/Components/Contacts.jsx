@@ -1,63 +1,10 @@
-import React, { useState } from "react";
-import {
-  Mail,
-  Github,
-  Linkedin,
-  Code2,
-  Sparkles,
-  Copy,
-  Check,
-  Send,
-} from "lucide-react";
+import React from "react";
+import { Send } from "lucide-react";
 import Reveal from "./Reveal";
 
 const EMAIL = "houekpoehafidele@gmail.com";
 
-const links = [
-  {
-    label: "Email",
-    value: EMAIL,
-    href: `mailto:${EMAIL}`,
-    icon: Mail,
-  },
-  {
-    label: "GitHub",
-    value: "github.com/DonaFidele",
-    href: "https://github.com/DonaFidele",
-    icon: Github,
-  },
-  {
-    label: "LinkedIn",
-    value: "dona-houekpoeha",
-    href: "https://www.linkedin.com/in/dona-houekpoeha/",
-    icon: Linkedin,
-  },
-  {
-    label: "LeetCode",
-    value: "houekpoehafidele",
-    href: "https://leetcode.com/u/houekpoehafidele/",
-    icon: Code2,
-  },
-  {
-    label: "Hugging Face",
-    value: "DonaFidele",
-    href: "https://huggingface.co/DonaFidele",
-    icon: Sparkles,
-  },
-];
-
 const Contacts = () => {
-  const [copied, setCopied] = useState(false);
-
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(EMAIL);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1800);
-    } catch {
-      // clipboard API unavailable — link still works
-    }
-  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -156,47 +103,6 @@ I'm open to AI/RAG systems, and agentic AI collaborations or research projects, 
                 </div>
               </form>
 
-              <div className="border border-border rounded-xl bg-surface overflow-hidden">
-                {links.map(({ label, value, href, icon }, i) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target={label === "Email" ? undefined : "_blank"}
-                    rel="noopener noreferrer"
-                    className={`flex items-center justify-between px-5 py-4 hover:bg-surfaceHover transition-colors ${
-                      i !== links.length - 1 ? "border-b border-border" : ""
-                    }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-accent">
-                        {React.createElement(icon, { className: "w-4 h-4" })}
-                      </div>
-                      <div>
-                        <p className="font-mono text-xs text-muted">{label}</p>
-                        <p className="font-mono text-sm text-text">{value}</p>
-                      </div>
-                    </div>
-
-                    {label === "Email" && (
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          copyEmail();
-                        }}
-                        aria-label="Copy email address"
-                        className="text-muted hover:text-accent transition-colors p-2"
-                      >
-                        {copied ? (
-                          <Check className="w-4 h-4 text-accent2" />
-                        ) : (
-                          <Copy className="w-4 h-4" />
-                        )}
-                      </button>
-                    )}
-                  </a>
-                ))}
-              </div>
             </div>
           </Reveal>
         </div>

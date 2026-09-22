@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
-import { Github, Linkedin, ChevronDown, FileText, Menu, X } from "lucide-react";
+import { Github, Linkedin, Mail, Code2, Sparkles, ChevronDown, FileText, Menu, X, Check } from "lucide-react";
 
 const navLinks = [
   { label: "about", href: "#about" },
@@ -15,9 +15,12 @@ const resumes = [
   { label: "Technology Innovation Leader", href: "/resume/WD_Role_Resume.pdf" },
 ];
 
+const EMAIL = "houekpoehafidele@gmail.com";
+
 const Navbar = ({ scrollY }) => {
   const [open, setOpen] = useState(false);
   const [resumeOpen, setResumeOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
   const resumeRef = useRef(null);
 
 useEffect(() => {
@@ -93,21 +96,21 @@ useEffect(() => {
           </div>
 
           <div className="flex gap-2">
-            {[
-              { icon: Github, link: "https://github.com/DonaFidele", label: "GitHub" },
-              { icon: Linkedin, link: "https://www.linkedin.com/in/dona-houekpoeha/", label: "LinkedIn" },
-            ].map(({ icon, link, label }) => (
-              <a
-                key={label}
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors"
-              >
-                {React.createElement(icon, { className: "w-4 h-4" })}
-              </a>
-            ))}
+            <a href="https://github.com/DonaFidele" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors">
+              <Github className="w-4 h-4" />
+            </a>
+            <a href="https://www.linkedin.com/in/dona-houekpoeha/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors">
+              <Linkedin className="w-4 h-4" />
+            </a>
+            <button type="button" onClick={async () => { try { await navigator.clipboard.writeText(EMAIL); setCopied(true); setTimeout(() => setCopied(false), 1800); } catch {} }} aria-label="Copier l'adresse email" className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors">
+              {copied ? <Check className="w-4 h-4" /> : <Mail className="w-4 h-4" />}
+            </button>
+            <a href="https://leetcode.com/u/houekpoehafidele/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode" className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors">
+              <Code2 className="w-4 h-4" />
+            </a>
+            <a href="https://huggingface.co/DonaFidele" target="_blank" rel="noopener noreferrer" aria-label="Hugging Face" className="w-9 h-9 rounded-md border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent transition-colors">
+              <Sparkles className="w-4 h-4" />
+            </a>
           </div>
         </div>
 
@@ -148,9 +151,12 @@ useEffect(() => {
               </a>
             ))}
           </div>
-          <div className="flex gap-3 pt-2">
+          <div className="flex flex-wrap gap-3 pt-2 border-t border-border">
             <a href="https://github.com/DonaFidele" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-accent">GitHub</a>
             <a href="https://www.linkedin.com/in/dona-houekpoeha/" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-accent">LinkedIn</a>
+            <button type="button" onClick={async () => { try { await navigator.clipboard.writeText(EMAIL); setCopied(true); setTimeout(() => setCopied(false), 1800); } catch {} }} className="text-muted hover:text-accent">{copied ? "Email copié" : "Email"}</button>
+            <a href="https://leetcode.com/u/houekpoehafidele/" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-accent">LeetCode</a>
+            <a href="https://huggingface.co/DonaFidele" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-accent">Hugging Face</a>
           </div>
         </div>
       )}
