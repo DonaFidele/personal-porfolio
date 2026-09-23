@@ -15,9 +15,22 @@ const Hero = ({ isLoaded }) => {
               isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-surface font-mono text-xs text-muted">
-              <Circle className="w-2 h-2 fill-accent2 text-accent2 animate-pulseDot" />
-              open to backend / AI systems collaborations
+            <div className="flex items-center gap-4">
+              <div className="relative shrink-0">
+                <span
+                  className="absolute -inset-1 rounded-full bg-gradient-to-tr from-accent via-accent2 to-transparent opacity-70 blur-[6px]"
+                  aria-hidden="true"
+                />
+                <img
+                  src="/images/personal_image.png"
+                  alt="Dona Houekpoeha"
+                  className="relative size-20 rounded-full border-2 border-accent/60 object-cover shadow-[0_0_24px_-6px_rgba(240,136,62,0.6)] sm:size-24"
+                />
+              </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-surface font-mono text-xs text-muted">
+                <Circle className="w-2 h-2 fill-accent2 text-accent2 animate-pulseDot" />
+                open to backend / AI systems collaborations
+              </div>
             </div>
 
             <h1 className="font-mono text-4xl sm:text-5xl font-bold leading-[1.15] text-text">

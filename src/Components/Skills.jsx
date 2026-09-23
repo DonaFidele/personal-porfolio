@@ -44,6 +44,7 @@ const Skills = () => {
               Grouped the way I actually reach for them — low-level systems work,
               model internals, and the backend plumbing that ties it together.
             </p>
+            <div className="divider-line mt-8" aria-hidden="true" />
           </div>
         </Reveal>
 

@@ -47,9 +47,9 @@ const involvementItems = [
 
 const Involvement = () => (
   <section id="involvement" className="section-glow bg-bg pb-28">
-    <div className="mx-auto max-w-4xl px-6">
+    <div className="mx-auto max-w-6xl px-6">
       <Reveal>
-        <div className="mb-14 flex items-center gap-4">
+        <div className="mb-6 flex items-center gap-4">
           <span className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-border bg-surface text-accent shadow-[0_0_18px_-6px_rgba(240,136,62,0.5)]">
             <HeartHandshake aria-hidden="true" className="size-5" strokeWidth={1.75} />
           </span>
@@ -60,6 +60,7 @@ const Involvement = () => (
             </h2>
           </div>
         </div>
+        <div className="divider-line mb-14" aria-hidden="true" />
       </Reveal>
 
       <div className="grid gap-7 md:grid-cols-2">
