@@ -80,6 +80,7 @@ export default function CertificatesSection() {
         <Reveal>
           <div className="mb-10">
             <p className="font-mono text-xs text-[#f0883e]">./certificates</p>
+            <div className="divider-line mt-8" aria-hidden="true" />
           </div>
         </Reveal>
 

@@ -22,6 +22,9 @@ const Contacts = () => {
   return (
     <section id="contact" className="py-24 bg-bg">
       <div className="max-w-6xl mx-auto px-6">
+        <Reveal>
+          <div className="divider-line mb-14" aria-hidden="true" />
+        </Reveal>
         <div className="grid lg:grid-cols-[1fr_1.1fr] gap-14 items-start">
           {/* LEFT — why reach out */}
           <Reveal>

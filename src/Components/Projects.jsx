@@ -70,6 +70,7 @@ const Projects = () => {
               exist because I wanted to understand what a framework was
               hiding from me.
             </p>
+            <div className="divider-line mt-8" aria-hidden="true" />
           </div>
         </Reveal>
 
