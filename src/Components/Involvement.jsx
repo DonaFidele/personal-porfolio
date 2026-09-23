@@ -6,10 +6,26 @@ const involvementItems = [
   {
     period: "Jun 2026 — Present",
     role: "Incubator Fellow — Venture Scaling",
-    organization: "FAST — Fund for Alumni Startups in Transition · Cohort 3 IDEA · Mastercard Foundation",
+    organization: "FAST (Fund for Alumni Startups in Transition) · Cohort 3 IDEA · Mastercard Foundation",
     location: "Cotonou, Benin",
     description:
-      "Selected for an incubator supporting startups founded by Mastercard Foundation alumni. Selected idea: MonTuteur, a digital platform connecting parents, students and qualified tutors to improve access to reliable, affordable tutoring in remote areas.",
+      "Selected for an incubator supporting startups founded by Mastercard Foundation alumni to develop MonTuteur, a digital platform connecting parents, students and qualified tutors to improve access to reliable, affordable tutoring in remote areas.",
+  },
+  {
+    period: "2024 — Present",
+    role: "Active Member",
+    organization: "BAMFA — Beninese Association of Mastercard Foundation Alumni",
+    location: "Abomey-Calavi, Benin",
+    description:
+      "Alumni network engagement; connecting Mastercard Foundation Scholar alumni to share opportunities, knowledge, and community support.",
+  },
+  {
+    period: "Jul 2023 — Present",
+    role: "Active Member",
+    organization: "One Million Leaders Africa (OMLA)",
+    location: "Abomey-Calavi, Benin",
+    description:
+      "Organized educational donation initiatives for primary-school students; led community-development projects including water-access improvement; coordinated logistics with local stakeholders. Co-organized a fundraiser with fellow Mastercard Foundation Scholars to fund and install solar kits for a primary school in Kogbétohoué, Klouékanmey.",
   },
   {
     period: "Dec 2023 — Jun 2025",
@@ -17,15 +33,7 @@ const involvementItems = [
     organization: "The Duke of Edinburgh's International Award",
     location: "Remote",
     description:
-      "Taught digital skills to 15 middle-school girls and led a 13-girl working group through the award: 11 of 13 were certified (85% vs. 43% nationally). Achieved the Gold Level alongside full-time university coursework and mentored student cohorts through award milestones.",
-  },
-  {
-    period: "May 2023 — Aug 2024",
-    role: "Team Member — Community Fundraising",
-    organization: "NYADIS / OMLA Community",
-    location: "Remote",
-    description:
-      "Co-organized a fundraiser with fellow Mastercard Foundation Scholars to fund solar-kit donations for a primary school in Kogbétohoué, Klouékanmey. Helped raise funds and travelled with the team to install the kits.",
+      "Taught digital skills to 15 middle-school girls and led a 13-girl working group to Gold Level certification (11 of 13 certified, 85% vs. 43% nationally); achieved Gold Level myself alongside full-time university coursework.",
   },
   {
     period: "Apr 2023 — Apr 2024",
@@ -33,7 +41,7 @@ const involvementItems = [
     organization: "Human AI",
     location: "Remote",
     description:
-      "Represented the organization by sharing its ethical-AI and digital-literacy sessions with my network. Attended sessions including \u201cLes enjeux de l'intelligence artificielle\u201d (certificate of participation).",
+      "Amplified Human AI's ethical-AI and digital-literacy mission by resharing foundation activities across my network and personally inviting ~20 people to conferences and sessions.",
   },
 ];
 

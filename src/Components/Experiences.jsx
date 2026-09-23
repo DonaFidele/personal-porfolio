@@ -11,19 +11,27 @@ const educationItems = [
     description:
       "GPA: 14.54/20 (Mention Bien) · Mastercard Foundation Scholars Program, Fully-Funded Recipient",
     details: [
-      "Final-year thesis: EntretienIA — real-time AI job-interview simulation platform (grade 18/20), supervised by Prof. Eugène C. Ezin",
-      "Research article from the EntretienIA project accepted at the COSTIC ESATIC 2026 colloquium",
-      "Ranked 2nd out of 84 students — cumulative GPA 15.26/20",
+      "Bachelor's Thesis — Mentora: AI-Driven Mentorship Management Platform, supervised by Dr. Ratheil V. Houndji (React.js, Tailwind CSS, Laravel, MySQL)",
+      "Designed a full-stack platform automating mentorship pairing, role-based access and certificate generation, built for 100+ mentor-mentee pairs expected at launch (program pending launch)",
     ],
     tags: ["Music", "Fitness", "Volunteering & Community Service"],
   },
   {
-    period: "Feb 11 — Jun 14, 2023",
+    period: "2026 — Present",
+    role: "English Language Pathway Program — Academic English Preparation",
+    organization: "ASU Global Launch · Mastercard Foundation Innovation & Technology Scholarship",
+    location: "Tempe, Arizona (Remote, in-person immersion Summer 2027)",
+    details: [
+      "Awarded full funding for advanced academic English preparation ahead of graduate studies, on the strength of a 90% score on the Mastercard Foundation-ASU Global Launch English Level Test",
+    ],
+  },
+  {
+    period: "Feb — Jun 2023",
     role: "Data Science Trainee — Advanced Analytics & NLP",
     organization: "Africa Tech Up Tour – iSHEERO",
     location: "Sèmè City, Benin",
     details: [
-      "Selected for a competitive 4-month intensive data science program through OpenClassrooms",
+      "Selected for a competitive 4-month intensive data science program (OpenClassrooms)",
       "Fine-tuned a Hugging Face model to classify customer reviews as positive, negative or mixed",
     ],
   },
@@ -33,7 +41,7 @@ const educationItems = [
     organization: "GirlLEAD Women in Data",
     location: "Remote",
     details: [
-      "Awarded merit-based access to international data science tracks and tech hackathons",
+      "Awarded merit-based access to international data science tracks and hackathons",
       "Completed the Data Science Track on DataCamp (Python, SQL, machine-learning pipelines)",
     ],
   },
@@ -56,8 +64,7 @@ const workExperienceItems = [
     organization: "FUN HIGH TECH",
     location: "Abomey-Calavi, Benin",
     details: [
-      "Maintained dynamic, database-driven web applications using PHP to deploy secure server-side functionalities",
-      "Optimized MySQL queries and structured front-end interfaces with HTML5, CSS3 and JavaScript",
+      "Practiced full-stack development (PHP, Laravel, MySQL, HTML5, CSS3, JavaScript) by building and iterating on several database-driven mini-applications during a hands-on introductory internship",
     ],
   },
   {
@@ -76,13 +83,13 @@ const awardsItems = [
     period: "Nov 2023",
     role: "Fiscathon — 1st Place, National Winner",
     description:
-      "Co-designed and pitched an AI-powered tax-forecasting platform with an integrated chatbot for fiscal queries; 1st among 18 teams (90+ participants) nationwide; developed its Node.js backend.",
+      "Won 1st place nationally (18 teams, 90 participants) by co-designing and pitching an AI-powered tax-forecasting platform with an integrated fiscal chatbot; developed its Node.js backend.",
   },
   {
     period: "Dec 2023",
     role: "JSTIM Hackathon — 1st Place, National Winner & Abdoulaye Bio-Tchane Innovation Prize",
     description:
-      "Led a 3-member team to pitch an AI solution recommending study pathways based on job-market trends; 1st among 10 finalist teams; developed its Node.js backend.",
+      "Won 1st place nationally among 10 finalist teams — plus the Abdoulaye Bio-Tchane Innovation Prize — by leading a 3-member team to pitch an AI solution recommending study pathways based on job-market trends.",
   },
 ];
 
