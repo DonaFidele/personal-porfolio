@@ -1,5 +1,5 @@
-import React from "react";
-import { GraduationCap, Briefcase, Trophy } from "lucide-react";
+import React, { useState } from "react";
+import { GraduationCap, Briefcase, Trophy, ChevronDown } from "lucide-react";
 import Reveal from "./Reveal";
 
 const educationItems = [
@@ -14,7 +14,6 @@ const educationItems = [
       "Bachelor's Thesis — Mentora: AI-Driven Mentorship Management Platform, supervised by Dr. Ratheil V. Houndji (React.js, Tailwind CSS, Laravel, MySQL)",
       "Designed a full-stack platform automating mentorship pairing, role-based access and certificate generation, built for 100+ mentor-mentee pairs expected at launch (program pending launch)",
     ],
-    tags: ["Music", "Fitness", "Volunteering & Community Service"],
   },
   {
     period: "2026 — Present",
@@ -108,65 +107,91 @@ const SectionHeader = ({ icon: Icon, label, command }) => (
   </Reveal>
 );
 
-const TimelineItem = ({ item, delay, isLast }) => (
-  <Reveal delay={delay}>
-    <article className="group relative pl-10 pb-16 last:pb-0 sm:pl-12">
-      {/* rail */}
-      {!isLast && (
+const TimelineItem = ({ item, delay, isLast }) => {
+  const [open, setOpen] = useState(true);
+  const hasBody = Boolean(item.description || item.details);
+  const bodyId = `timeline-body-${item.role.replace(/[^a-z0-9]+/gi, "-").toLowerCase()}`;
+
+  return (
+    <Reveal delay={delay}>
+      <article className="group relative pl-10 pb-16 last:pb-0 sm:pl-12">
+        {/* rail */}
+        {!isLast && (
+          <span
+            className="timeline-rail absolute left-[7px] top-9 bottom-0 w-px sm:left-[9px]"
+            aria-hidden="true"
+          />
+        )}
+        {/* dot */}
         <span
-          className="timeline-rail absolute left-[7px] top-4 bottom-0 w-px sm:left-[9px]"
+          className="absolute left-0 top-8 flex size-[15px] items-center justify-center rounded-full border-2 border-accent bg-bg shadow-[0_0_12px_rgba(240,136,62,0.45)] transition-transform duration-300 group-hover:scale-110 sm:size-[19px]"
           aria-hidden="true"
-        />
-      )}
-      {/* dot */}
-      <span
-        className="absolute left-0 top-1.5 flex size-[15px] items-center justify-center rounded-full border-2 border-accent bg-bg shadow-[0_0_12px_rgba(240,136,62,0.45)] transition-transform duration-300 group-hover:scale-110 sm:size-[19px]"
-        aria-hidden="true"
-      >
-        <span className="size-1.5 rounded-full bg-accent" />
-      </span>
-
-      <div className="mb-4">
-        <span className="inline-flex items-center rounded-full border border-accent/25 bg-accent/[0.07] px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-accent">
-          {item.period}
+        >
+          <span className="size-1.5 rounded-full bg-accent" />
         </span>
-      </div>
-      <h4 className="text-lg font-semibold leading-snug text-text">{item.role}</h4>
-      <p className="mt-1.5 font-mono text-sm text-accent2">
-        {item.organization}
-        {item.location && <span className="text-muted"> · {item.location}</span>}
-      </p>
 
-      {item.description && (
-        <p className="mt-4 text-sm leading-relaxed text-muted">{item.description}</p>
-      )}
-
-      {item.details && (
-        <ul className="mt-4 space-y-2.5">
-          {item.details.map((detail, i) => (
-            <li key={i} className="flex gap-3 text-sm leading-relaxed text-muted">
-              <span className="mt-2 inline-block size-1.5 flex-shrink-0 rounded-full bg-accent2/70" />
-              <span>{detail}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {item.tags && (
-        <div className="mt-5 flex flex-wrap gap-2">
-          {item.tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full border border-border bg-surface px-3 py-1 font-mono text-[11px] text-muted"
-            >
-              {tag}
+        <button
+          type="button"
+          onClick={() => hasBody && setOpen((v) => !v)}
+          aria-expanded={hasBody ? open : undefined}
+          aria-controls={hasBody ? bodyId : undefined}
+          className={`flex w-full flex-col items-start gap-3 rounded-lg pt-6 text-left transition-colors ${
+            hasBody ? "cursor-pointer" : "cursor-default"
+          }`}
+        >
+          <span className="flex w-full items-start justify-between gap-4">
+            <span className="inline-flex items-center rounded-full border border-accent/25 bg-accent/[0.07] px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-accent">
+              {item.period}
             </span>
-          ))}
-        </div>
-      )}
-    </article>
-  </Reveal>
-);
+            {hasBody && (
+              <ChevronDown
+                aria-hidden="true"
+                className={`mt-1 size-4 shrink-0 text-muted transition-transform duration-300 group-hover:text-accent ${
+                  open ? "rotate-180" : ""
+                }`}
+              />
+            )}
+          </span>
+          <span className="block">
+            <span className="block text-lg font-semibold leading-snug text-text transition-colors group-hover:text-accent">
+              {item.role}
+            </span>
+            <span className="mt-1.5 block font-mono text-sm text-accent2">
+              {item.organization}
+              {item.location && <span className="text-muted"> · {item.location}</span>}
+            </span>
+          </span>
+        </button>
+
+        {hasBody && (
+          <div
+            id={bodyId}
+            className={`grid transition-all duration-300 ease-out ${
+              open ? "mt-4 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+            }`}
+          >
+            <div className="overflow-hidden">
+              {item.description && (
+                <p className="text-sm leading-relaxed text-muted">{item.description}</p>
+              )}
+
+              {item.details && (
+                <ul className={`space-y-2.5 ${item.description ? "mt-4" : ""}`}>
+                  {item.details.map((detail, i) => (
+                    <li key={i} className="flex gap-3 text-sm leading-relaxed text-muted">
+                      <span className="mt-2 inline-block size-1.5 flex-shrink-0 rounded-full bg-accent2/70" />
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        )}
+      </article>
+    </Reveal>
+  );
+};
 
 const Experiences = () => (
   <section id="experiences" className="section-glow bg-bg py-28">
