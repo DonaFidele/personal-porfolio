@@ -110,24 +110,28 @@ const SectionHeader = ({ icon: Icon, label, command }) => (
 
 const TimelineItem = ({ item, delay, isLast }) => (
   <Reveal delay={delay}>
-    <article className="relative pl-10 pb-14 last:pb-0 sm:pl-12">
+    <article className="group relative pl-10 pb-16 last:pb-0 sm:pl-12">
       {/* rail */}
       {!isLast && (
         <span
-          className="absolute left-[7px] top-3 bottom-0 w-px bg-border sm:left-[9px]"
+          className="timeline-rail absolute left-[7px] top-4 bottom-0 w-px sm:left-[9px]"
           aria-hidden="true"
         />
       )}
       {/* dot */}
       <span
-        className="absolute left-0 top-1.5 flex size-[15px] items-center justify-center rounded-full border-2 border-accent bg-bg sm:size-[19px]"
+        className="absolute left-0 top-1.5 flex size-[15px] items-center justify-center rounded-full border-2 border-accent bg-bg shadow-[0_0_12px_rgba(240,136,62,0.45)] transition-transform duration-300 group-hover:scale-110 sm:size-[19px]"
         aria-hidden="true"
       >
         <span className="size-1.5 rounded-full bg-accent" />
       </span>
 
-      <p className="font-mono text-xs uppercase tracking-[0.14em] text-accent">{item.period}</p>
-      <h4 className="mt-3 text-lg font-semibold leading-snug text-text">{item.role}</h4>
+      <div className="mb-4">
+        <span className="inline-flex items-center rounded-full border border-accent/25 bg-accent/[0.07] px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-accent">
+          {item.period}
+        </span>
+      </div>
+      <h4 className="text-lg font-semibold leading-snug text-text">{item.role}</h4>
       <p className="mt-1.5 font-mono text-sm text-accent2">
         {item.organization}
         {item.location && <span className="text-muted"> · {item.location}</span>}
@@ -165,11 +169,11 @@ const TimelineItem = ({ item, delay, isLast }) => (
 );
 
 const Experiences = () => (
-  <section id="experiences" className="bg-bg py-28">
+  <section id="experiences" className="section-glow bg-bg py-28">
     <div className="mx-auto max-w-4xl px-6">
       <Reveal>
         <p className="mb-2 font-mono text-xs text-accent">./experience</p>
-        <h2 className="mb-20 font-mono text-3xl font-bold text-text sm:text-4xl">
+        <h2 className="mb-20 font-mono text-3xl font-bold sm:text-4xl text-gradient">
           Experience &amp; Education
         </h2>
       </Reveal>
@@ -210,11 +214,17 @@ const Experiences = () => (
         <div className="grid gap-6 sm:grid-cols-2">
           {awardsItems.map((item, index) => (
             <Reveal key={item.role} delay={index * 90}>
-              <article className="flex h-full flex-col rounded-xl border border-border bg-surface p-7 transition-colors hover:border-accent">
-                <p className="font-mono text-xs uppercase tracking-[0.14em] text-accent">
-                  {item.period}
-                </p>
-                <h4 className="mt-3 text-base font-semibold leading-snug text-text">{item.role}</h4>
+              <article className="hover-glow relative flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface p-7 hover:border-accent/60">
+                <span
+                  className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-accent via-accent2 to-transparent"
+                  aria-hidden="true"
+                />
+                <div className="mb-4">
+                  <span className="inline-flex items-center rounded-full border border-accent/25 bg-accent/[0.07] px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-accent">
+                    {item.period}
+                  </span>
+                </div>
+                <h4 className="text-base font-semibold leading-snug text-text">{item.role}</h4>
                 <p className="mt-4 text-sm leading-relaxed text-muted">{item.description}</p>
               </article>
             </Reveal>
