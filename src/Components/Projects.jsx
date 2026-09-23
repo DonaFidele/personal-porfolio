@@ -57,12 +57,12 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 bg-surface/40 border-y border-border">
+    <section id="projects" className="section-glow py-24 bg-surface/40 border-y border-border">
       <div className="max-w-6xl mx-auto px-6">
         <Reveal>
           <div className="mb-14">
             <p className="font-mono text-xs text-accent mb-2">./projects</p>
-            <h2 className="font-mono text-3xl sm:text-4xl font-bold text-text">
+            <h2 className="font-mono text-3xl sm:text-4xl font-bold text-gradient">
               Selected work
             </h2>
             <p className="text-muted mt-3 max-w-xl">
@@ -76,7 +76,11 @@ const Projects = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p, i) => (
             <Reveal key={p.title} delay={i * 70}>
-              <div className="h-full flex flex-col justify-between border border-border rounded-xl p-6 bg-bg hover:border-accent/50 hover:-translate-y-1 transition-all duration-300">
+              <div className="group hover-glow relative h-full flex flex-col justify-between overflow-hidden border border-border rounded-xl p-6 bg-bg hover:border-accent/60 hover:-translate-y-1">
+                <span
+                  className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-accent via-accent2 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  aria-hidden="true"
+                />
                 <div>
                   <div className="flex items-start justify-between gap-3 mb-3">
                     <h3 className="font-mono text-lg font-bold text-text leading-snug">

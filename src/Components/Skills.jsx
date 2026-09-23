@@ -32,12 +32,12 @@ const skillGroups = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 bg-bg">
+    <section id="skills" className="section-glow py-24 bg-bg">
       <div className="max-w-6xl mx-auto px-6">
         <Reveal>
           <div className="mb-14">
             <p className="font-mono text-xs text-accent mb-2">./skills</p>
-            <h2 className="font-mono text-3xl sm:text-4xl font-bold text-text">
+            <h2 className="font-mono text-3xl sm:text-4xl font-bold text-gradient">
               What I work with
             </h2>
             <p className="text-muted mt-3 max-w-xl">

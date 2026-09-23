@@ -25,6 +25,46 @@ body {
   background-size: 40px 40px;
 }
 
+/* gradient headline accent */
+.text-gradient {
+  background-image: linear-gradient(100deg, #f0883e 0%, #f5b27f 45%, #3fb950 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* soft glow on hover for cards */
+.hover-glow {
+  transition: box-shadow 0.35s ease, transform 0.35s ease, border-color 0.35s ease;
+}
+.hover-glow:hover {
+  box-shadow:
+    0 0 0 1px rgba(240, 136, 62, 0.18),
+    0 18px 40px -18px rgba(240, 136, 62, 0.35);
+}
+
+/* radial ambient glow used to decorate sections */
+.section-glow {
+  position: relative;
+  isolation: isolate;
+}
+.section-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(600px circle at 15% 0%, rgba(240, 136, 62, 0.07), transparent 60%),
+    radial-gradient(600px circle at 85% 100%, rgba(63, 185, 80, 0.06), transparent 60%);
+  pointer-events: none;
+}
+
+/* animated gradient rail for timelines */
+.timeline-rail {
+  background: linear-gradient(to bottom, rgba(240, 136, 62, 0.55), rgba(63, 185, 80, 0.35), transparent);
+}
+
 /* scroll reveal */
 .reveal {
   opacity: 0;

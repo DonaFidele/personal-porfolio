@@ -36,9 +36,9 @@ const Stats = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-xl overflow-hidden border border-border">
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 80}>
-              <div className="bg-bg p-6 h-full hover:bg-surface transition-colors">
-                <div className="text-accent mb-3">{s.icon}</div>
-                <h3 className="font-mono text-3xl font-bold text-text">{s.value}</h3>
+              <div className="group bg-bg p-6 h-full hover:bg-surface transition-colors">
+                <div className="text-accent mb-3 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-0.5">{s.icon}</div>
+                <h3 className="font-mono text-3xl font-bold text-gradient">{s.value}</h3>
                 <p className="text-sm font-semibold text-text mt-1">{s.label}</p>
                 <p className="text-xs text-muted mt-1">{s.sub}</p>
               </div>
