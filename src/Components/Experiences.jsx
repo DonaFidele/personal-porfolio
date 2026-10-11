@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { GraduationCap, Briefcase, Trophy, ChevronDown } from "lucide-react";
+import { GraduationCap, Briefcase, Trophy, ChevronDown, Linkedin } from "lucide-react";
 import Reveal from "./Reveal";
 
 const educationItems = [
@@ -83,12 +83,16 @@ const awardsItems = [
     role: "Fiscathon — 1st Place, National Winner",
     description:
       "Won 1st place nationally (18 teams, 90 participants) by co-designing and pitching an AI-powered tax-forecasting platform with an integrated fiscal chatbot; developed its Node.js backend.",
+    linkedinUrl:
+      "https://www.linkedin.com/posts/dona-houekpoeha_fiscathon-fiscathon-innovationfiscale-ugcPost-7127992193234948096-zG9E/",
   },
   {
     period: "Dec 2023",
     role: "JSTIM Hackathon — 1st Place, National Winner & Abdoulaye Bio-Tchane Innovation Prize",
     description:
       "Won 1st place nationally among 10 finalist teams — plus the Abdoulaye Bio-Tchane Innovation Prize — by leading a 3-member team to pitch an AI solution recommending study pathways based on job-market trends.",
+    linkedinUrl:
+      "https://www.linkedin.com/posts/dona-houekpoeha_jobtrends-innovation-hackathon-ugcPost-7141498872215830528-ewDr/",
   },
 ];
 
@@ -251,6 +255,19 @@ const Experiences = () => (
                 </div>
                 <h4 className="text-base font-semibold leading-snug text-text">{item.role}</h4>
                 <p className="mt-4 text-sm leading-relaxed text-muted">{item.description}</p>
+                {item.linkedinUrl && (
+                  <a
+                    href={item.linkedinUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`View LinkedIn post about ${item.role}`}
+                    title="View LinkedIn post"
+                    className="mt-6 inline-flex w-fit items-center gap-2 rounded-md border border-[#0a66c2]/40 px-3 py-2 font-mono text-xs text-[#70b7ff] transition-colors hover:border-[#0a66c2] hover:bg-[#0a66c2]/10 hover:text-white"
+                  >
+                    <Linkedin aria-hidden="true" className="size-4" strokeWidth={2} />
+                    <span>View LinkedIn post</span>
+                  </a>
+                )}
               </article>
             </Reveal>
           ))}
