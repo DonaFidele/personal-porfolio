@@ -261,11 +261,11 @@ const Experiences = () => (
                     target="_blank"
                     rel="noreferrer"
                     aria-label={`View LinkedIn post about ${item.role}`}
-                    title="Voir la publication LinkedIn"
+                    title="View LinkedIn post"
                     className="mt-6 inline-flex w-fit items-center gap-2 rounded-md border border-[#0a66c2]/40 px-3 py-2 font-mono text-xs text-[#70b7ff] transition-colors hover:border-[#0a66c2] hover:bg-[#0a66c2]/10 hover:text-white"
                   >
                     <Linkedin aria-hidden="true" className="size-4" strokeWidth={2} />
-                    <span>Voir la publication</span>
+                    <span>View LinkedIn post</span>
                   </a>
                 )}
               </article>
