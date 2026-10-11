@@ -4,13 +4,14 @@ import Reveal from "./Reveal";
 
 const projects = [
   {
-  title: "DeliveryOptimizationAnalysis",
-  description:
-    "An exploratory data analysis of 100K+ ride-hailing trips across Togo, Benin, and Gabon — uncovering acceptance and cancellation rates, wait times, and driver performance by city and service type to surface where logistics break down.",
-  tags: ["Python", "Pandas", "Data Analysis", "Jupyter Notebook", "Data Visualization"],
-  github: "https://github.com/DonaFidele/DeliveryOptimizationAnalysis/tree/main",
-  status: "Public",
-},
+    title: "smart-transit-africa-ml",
+    description:
+      "A machine-learning project focused on understanding and improving urban mobility in Africa through transit data, predictive analysis, and an interactive Streamlit application.",
+    tags: ["Python", "Machine Learning", "Data Analysis", "Streamlit", "African Mobility"],
+    github: "https://github.com/DonaFidele/smart-transit-africa-ml",
+    liveUrl: "https://smart-transit-africa.streamlit.app/",
+    status: "Public",
+  },
   {
     title: "dona-chat",
     description:
