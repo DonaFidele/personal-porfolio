@@ -26,11 +26,22 @@ function CertificateCard({ certificate }) {
   return (
     <article className="group relative overflow-hidden rounded-lg border border-[#30363d] bg-[#161b22] transition-all duration-300 ease-out hover:scale-[1.04] hover:border-[#f0883e] focus-within:scale-[1.04] focus-within:border-[#f0883e]">
       <div className="aspect-[1.55] overflow-hidden border-b border-[#30363d] bg-[#0d1117]">
-        <img
-          src={certificate.imageUrl}
-          alt={`Preview of ${certificate.title} certificate`}
-          className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
-        />
+        {certificate.previewType === "pdf" ? (
+          <object
+            data={certificate.imageUrl}
+            type="application/pdf"
+            aria-label={`Preview of ${certificate.title} certificate`}
+            className="pointer-events-none size-full bg-white"
+          >
+            <p className="p-4 font-mono text-xs text-[#161b22]">PDF certificate preview</p>
+          </object>
+        ) : (
+          <img
+            src={certificate.imageUrl}
+            alt={`Preview of ${certificate.title} certificate`}
+            className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        )}
       </div>
 
       <div className="flex min-h-28 flex-col gap-2 p-4">
@@ -84,13 +95,23 @@ export default function CertificatesSection() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
-          {certificates.slice(0, 6).map((certificate, index) => (
-            <Reveal key={certificate.title} delay={index * 50}>
-              <CertificateCard certificate={certificate} />
-            </Reveal>
-          ))}
-        </div>
+        {Object.entries(
+          certificates.reduce((groups, certificate) => {
+            (groups[certificate.domain] ??= []).push(certificate);
+            return groups;
+          }, {})
+        ).map(([domain, domainCertificates]) => (
+          <div key={domain} className="mb-12 last:mb-0">
+            <h2 className="mb-5 font-mono text-sm uppercase tracking-[0.18em] text-[#8b949e]">{domain}</h2>
+            <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
+              {domainCertificates.map((certificate, index) => (
+                <Reveal key={certificate.title} delay={index * 50}>
+                  <CertificateCard certificate={certificate} />
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        ))}
 
         <Reveal delay={180}>
           <div className="mt-10 text-center">

@@ -92,11 +92,11 @@ const awardsItems = [
   },
 ];
 
-const SectionHeader = ({ icon: Icon, label, command }) => (
+const SectionHeader = ({ icon, label, command }) => (
   <Reveal>
     <div className="mb-10 flex items-center gap-4">
       <span className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-border bg-surface text-accent">
-        <Icon aria-hidden="true" className="size-5" strokeWidth={1.75} />
+        {React.createElement(icon, { "aria-hidden": true, className: "size-5", strokeWidth: 1.75 })}
       </span>
       <div className="flex flex-col">
         <span className="font-mono text-xs text-accent">{command}</span>
