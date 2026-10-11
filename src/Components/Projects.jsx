@@ -1,6 +1,8 @@
 import React from "react";
 import { Github, Lock, ArrowUpRight } from "lucide-react";
 import Reveal from "./Reveal";
+import SectionHeader from "./SectionHeader";
+import { FolderKanban } from "lucide-react";
 
 const projects = [
   {
@@ -60,20 +62,10 @@ const Projects = () => {
   return (
     <section id="projects" className="section-glow py-24 bg-surface/40 border-y border-border">
       <div className="max-w-6xl mx-auto px-6">
-        <Reveal>
-          <div className="mb-14">
-            <p className="font-mono text-xs text-accent mb-2">./projects</p>
-            <h2 className="font-mono text-3xl sm:text-4xl font-bold text-gradient">
-              Selected work
-            </h2>
-            <p className="text-muted mt-3 max-w-xl">
-              Systems and models built from first principles — most of these
-              exist because I wanted to understand what a framework was
-              hiding from me.
-            </p>
-            <div className="divider-line mt-8" aria-hidden="true" />
-          </div>
-        </Reveal>
+        <SectionHeader icon={FolderKanban} command="~/projects" label="Selected work" />
+        <p className="mb-14 -mt-5 max-w-xl text-muted">
+          A few things I&apos;ve built, shipped, and learned from.
+        </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p, i) => (

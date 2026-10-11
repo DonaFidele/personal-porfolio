@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Send } from "lucide-react";
 import Reveal from "./Reveal";
+import SectionHeader from "./SectionHeader";
+import { Mail } from "lucide-react";
 
 const EMAIL = "houekpoehafidele@gmail.com";
 
@@ -22,16 +24,10 @@ const Contacts = () => {
   return (
     <section id="contact" className="py-24 bg-bg">
       <div className="max-w-6xl mx-auto px-6">
-        <Reveal>
-          <div className="divider-line mb-14" aria-hidden="true" />
-        </Reveal>
+        <SectionHeader icon={Mail} command="~/contact" label="Let&apos;s talk systems" />
         <div className="grid lg:grid-cols-[1fr_1.1fr] gap-14 items-start">
           {/* LEFT — why reach out */}
           <Reveal>
-            <p className="font-mono text-xs text-accent mb-2">./contact</p>
-            <h2 className="font-mono text-3xl sm:text-4xl font-bold text-text mb-6">
-              Let's talk systems
-            </h2>
             <p className="text-muted leading-relaxed max-w-md mb-8">
 I'm open to AI/RAG systems, and agentic AI collaborations or research projects, full-stack development, with a growing interest in computer vision. If it involves turning an idea into something real and usable, I'm interested.            </p>
 
