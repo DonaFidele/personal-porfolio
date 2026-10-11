@@ -1,5 +1,7 @@
 import React from "react";
 import Reveal from "./Reveal";
+import SectionHeader from "./SectionHeader";
+import { Wrench } from "lucide-react";
 
 const skillGroups = [
   {
@@ -34,19 +36,11 @@ const Skills = () => {
   return (
     <section id="skills" className="section-glow py-24 bg-bg">
       <div className="max-w-6xl mx-auto px-6">
-        <Reveal>
-          <div className="mb-14">
-            <p className="font-mono text-xs text-accent mb-2">./skills</p>
-            <h2 className="font-mono text-3xl sm:text-4xl font-bold text-gradient">
-              What I work with
-            </h2>
-            <p className="text-muted mt-3 max-w-xl">
-              Grouped the way I actually reach for them — low-level systems work,
-              model internals, and the backend plumbing that ties it together.
-            </p>
-            <div className="divider-line mt-8" aria-hidden="true" />
-          </div>
-        </Reveal>
+        <SectionHeader icon={Wrench} command="~/skills" label="What I work with" />
+        <p className="mb-14 -mt-5 max-w-xl text-muted">
+          Grouped the way I actually reach for them — low-level systems work,
+          model internals, and the backend plumbing that ties it together.
+        </p>
 
         <div className="grid md:grid-cols-2 gap-6">
           {skillGroups.map((group, i) => (

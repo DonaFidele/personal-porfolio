@@ -6,6 +6,8 @@ import {
   ExternalLink,
 } from "lucide-react";
 import Reveal from "./Reveal";
+import SectionHeader from "./SectionHeader";
+import { Award } from "lucide-react";
 import { certificates } from "../../data/certificates";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/dona-houekpoeha/details/certifications";
@@ -88,12 +90,7 @@ export default function CertificatesSection() {
   return (
     <section id="certificates" className="border-y border-[#30363d] bg-[#0d1117] py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <Reveal>
-          <div className="mb-10">
-            <p className="font-mono text-xs text-[#f0883e]">./certificates</p>
-            <div className="divider-line mt-8" aria-hidden="true" />
-          </div>
-        </Reveal>
+        <SectionHeader icon={Award} command="~/certificates" label="Certificates" />
 
         {Object.entries(
           certificates.reduce((groups, certificate) => {

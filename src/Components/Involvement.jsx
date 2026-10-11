@@ -1,6 +1,7 @@
 import React from "react";
 import { HeartHandshake } from "lucide-react";
 import Reveal from "./Reveal";
+import SectionHeader from "./SectionHeader";
 
 const involvementItems = [
   {
@@ -48,20 +49,7 @@ const involvementItems = [
 const Involvement = () => (
   <section id="involvement" className="section-glow bg-bg pb-28">
     <div className="mx-auto max-w-6xl px-6">
-      <Reveal>
-        <div className="mb-6 flex items-center gap-4">
-          <span className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-border bg-surface text-accent shadow-[0_0_18px_-6px_rgba(240,136,62,0.5)]">
-            <HeartHandshake aria-hidden="true" className="size-5" strokeWidth={1.75} />
-          </span>
-          <div className="flex flex-col">
-            <span className="font-mono text-xs text-accent">./volunteering</span>
-            <h2 className="font-mono text-2xl font-bold tracking-tight sm:text-3xl text-gradient">
-              Volunteering &amp; Community
-            </h2>
-          </div>
-        </div>
-        <div className="divider-line mb-14" aria-hidden="true" />
-      </Reveal>
+        <SectionHeader icon={HeartHandshake} command="~/volunteering" label="Volunteering & Community" />
 
       <div className="grid gap-7 md:grid-cols-2">
         {involvementItems.map((item, index) => (
